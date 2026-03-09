@@ -1,0 +1,102 @@
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  background: linear-gradient(180deg, #f8f8f8 0%, #e8e8e8 100%);
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.08);
+  border-top: 1px solid #d0d0d0;
+  z-index: 1000;
+}
+
+.start-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 16px 0 10px;
+  background: linear-gradient(180deg, #4A90D9 0%, #357ABD 100%);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Space Grotesk', Tahoma, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.3px;
+  transition: all 0.15s;
+}
+
+.start-button:hover {
+  background: linear-gradient(180deg, #5DA0E5 0%, #4A8CC8 100%);
+}
+
+.start-button:active,
+.start-button.active {
+  background: linear-gradient(180deg, #357ABD 0%, #2A6BA8 100%);
+}
+
+.start-button img {
+  width: 16px;
+  height: 16px;
+}
+
+.taskbar-items {
+  flex: 1;
+  display: flex;
+  gap: 4px;
+  margin-left: 8px;
+  min-width: 0;
+}
+
+.taskbar-item {
+  height: 26px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #d5d5d5;
+  border-radius: 4px;
+  font-family: 'Space Grotesk', Tahoma, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #444;
+  cursor: pointer;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+
+.taskbar-item:hover {
+  background: #f0f6ff;
+  border-color: #b0c8e8;
+}
+
+.taskbar-item.active {
+  background: #e8f0fa;
+  border-color: #4A90D9;
+  color: #2A6BA8;
+  font-weight: 600;
+}
+
+.system-tray {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  height: 26px;
+}
+
+.time {
+  font-family: 'Space Grotesk', Tahoma, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #666;
+  letter-spacing: 0;
+}

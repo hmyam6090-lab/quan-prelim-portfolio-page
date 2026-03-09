@@ -1,0 +1,794 @@
+.content-section {
+  animation: contentFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Typewriter caret */
+.type-caret {
+  display: inline-block;
+  margin-left: 2px;
+  color: #4A90D9;
+  animation: blinkCaret 900ms steps(1) infinite;
+  font-weight: 300;
+}
+
+@keyframes blinkCaret {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* ────────────────────────────────────────
+   ABOUT PAGE
+   ──────────────────────────────────────── */
+.about-page {
+  padding: 40px 36px;
+  min-height: 480px;
+}
+
+.about-hero {
+  margin-bottom: 32px;
+}
+
+.about-name {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 12px;
+}
+
+.name-line {
+  display: block;
+  line-height: 1;
+}
+
+.name-hi {
+  font-family: 'Playfair Display', 'DM Serif Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  color: #999;
+  letter-spacing: 0.5px;
+}
+
+.name-big {
+  margin-top: 4px;
+}
+
+.name-serif {
+  font-family: 'Playfair Display', 'DM Serif Display', serif;
+  font-weight: 900;
+  font-size: 64px;
+  color: #1a1a1a;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+}
+
+.about-subtitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #888;
+  margin-top: 12px;
+  min-height: 1.8em;
+}
+
+.about-body {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.about-text {
+  max-width: 520px;
+}
+
+.about-text p {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.highlights-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #aaa;
+  margin-bottom: 12px;
+}
+
+.highlight-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.highlight-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: #f6f6f6;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #444;
+  transition: all 0.2s;
+}
+
+.highlight-tag:hover {
+  background: #f0f6ff;
+  border-color: #d0e0f5;
+  transform: translateY(-1px);
+}
+
+.tag-category {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #4A90D9;
+  background: rgba(74, 144, 217, 0.08);
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.about-links {
+  display: flex;
+  gap: 12px;
+}
+
+.about-link {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #4A90D9;
+  text-decoration: none;
+  padding: 8px 18px;
+  border: 1.5px solid #4A90D9;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.about-link:hover {
+  background: #4A90D9;
+  color: white;
+}
+
+/* ────────────────────────────────────────
+   PROJECTS PAGE
+   ──────────────────────────────────────── */
+.projects-page {
+  padding: 32px;
+  min-height: 500px;
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.projects-title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.projects-title-serif {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 32px;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+.projects-title-sans {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 300;
+  font-size: 32px;
+  color: #999;
+}
+
+.projects-filters {
+  display: flex;
+  gap: 4px;
+}
+
+.filter-btn {
+  border: none;
+  background: transparent;
+  padding: 6px 14px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #999;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  color: #555;
+  background: #f5f5f5;
+}
+
+.filter-btn.active {
+  color: #4A90D9;
+  background: #f0f6ff;
+  font-weight: 600;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.project-card-new {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: cardSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes cardSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-card-new:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-color: #d0d0d0;
+}
+
+.project-thumb-new {
+  height: 160px;
+  background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-thumb-new::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(74, 144, 217, 0.08), transparent 60%);
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26, 26, 26, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.project-card-new:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-view {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  padding: 8px 20px;
+  border: 1.5px solid white;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.project-details {
+  padding: 16px;
+}
+
+.project-details h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+.project-details p {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  color: #888;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.project-tag {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 4px 10px;
+  background: #f6f6f6;
+  border-radius: 4px;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* ────────────────────────────────────────
+   SKILLS PAGE
+   ──────────────────────────────────────── */
+.skills-page {
+  padding: 32px;
+  min-height: 480px;
+}
+
+.skills-header {
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.skills-title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.skills-title-serif {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 32px;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+.skills-title-sans {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 300;
+  font-size: 32px;
+  color: #999;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.skill-category-card {
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  transition: all 0.3s;
+  animation: cardSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.skill-category-card:hover {
+  border-color: #d0e0f5;
+  box-shadow: 0 4px 16px rgba(74, 144, 217, 0.06);
+}
+
+.skill-category-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.skill-icon {
+  font-size: 16px;
+  color: #4A90D9;
+}
+
+.skill-category-header h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skill-item {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 12px;
+  background: #f8f8f8;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  color: #555;
+  transition: all 0.2s;
+}
+
+.skill-item:hover {
+  background: #f0f6ff;
+  border-color: #d0e0f5;
+  color: #4A90D9;
+}
+
+/* ────────────────────────────────────────
+   CONTACT PAGE
+   ──────────────────────────────────────── */
+.contact-page {
+  padding: 40px 36px;
+  min-height: 400px;
+}
+
+.contact-hero {
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.contact-title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.contact-title-serif {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 32px;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+.contact-title-sans {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 300;
+  font-size: 32px;
+  color: #999;
+}
+
+.contact-subtitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  color: #888;
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s;
+  animation: cardSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.contact-card:hover {
+  border-color: #4A90D9;
+  background: #f8fbff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(74, 144, 217, 0.08);
+}
+
+.contact-icon {
+  font-size: 24px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6f6f6;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.contact-card-info h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 2px;
+}
+
+.contact-card-info p {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  color: #888;
+}
+
+/* ────────────────────────────────────────
+   GALLERY PAGE
+   ──────────────────────────────────────── */
+.gallery-page {
+  padding: 24px;
+  min-height: 400px;
+  background: #fafafa;
+}
+
+.gallery-header {
+  margin-bottom: 20px;
+}
+
+.gallery-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 4px;
+}
+
+.gallery-subtitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  color: #888;
+  margin: 0 0 12px;
+}
+
+.gallery-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 6px 10px;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  color: #666;
+}
+
+.gallery-count {
+  font-weight: 600;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.gallery-item:hover {
+  background: rgba(74, 144, 217, 0.08);
+  transform: translateY(-2px);
+}
+
+.gallery-thumb {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  background: #e8e8e8;
+  border: 1.5px solid #ddd;
+}
+
+.gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-thumb-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e0e8f0, #d8dfe8);
+}
+
+.thumb-icon {
+  font-size: 32px;
+  opacity: 0.4;
+}
+
+.gallery-item-caption {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  color: #666;
+  text-align: center;
+}
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: lbFadeIn 0.2s ease;
+}
+
+@keyframes lbFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox-inner {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 520px;
+  width: 90%;
+  position: relative;
+  animation: lbSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes lbSlideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.lightbox-close:hover {
+  color: #222;
+}
+
+.lightbox-image-wrap {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  background: #f0f0f0;
+}
+
+.lightbox-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.lightbox-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  color: #999;
+  background: linear-gradient(135deg, #e8ecf0, #d8dee8);
+}
+
+.lightbox-placeholder-icon {
+  font-size: 48px;
+  opacity: 0.5;
+}
+
+.lightbox-placeholder-path {
+  font-family: monospace;
+  font-size: 11px;
+  color: #aaa;
+}
+
+.lightbox-caption {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  color: #444;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.gallery-footer {
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+
+.gallery-footer p {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  color: #999;
+}
+
+.gallery-footer code {
+  background: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+}
+
+/* ────────────────────────────────────────
+   RESPONSIVE
+   ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .about-page {
+    padding: 24px 20px;
+  }
+
+  .name-serif {
+    font-size: 42px;
+  }
+
+  .projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .projects-grid,
+  .skills-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-title-serif,
+  .projects-title-sans,
+  .skills-title-serif,
+  .skills-title-sans,
+  .contact-title-serif,
+  .contact-title-sans {
+    font-size: 24px;
+  }
+}
