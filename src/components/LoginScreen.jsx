@@ -52,11 +52,6 @@ const LoginScreen = ({ onLogin, unlockSound }) => {
     const handleInteraction = () => {
       unlock();
       if (unlockSound) unlockSound();
-      // Play startup after unlock
-      if (!startupPlayed.current) {
-        startupPlayed.current = true;
-        playSound('startup', 0.4);
-      }
     };
     document.addEventListener('click', handleInteraction, { once: true });
     document.addEventListener('touchstart', handleInteraction, { once: true });
@@ -64,7 +59,15 @@ const LoginScreen = ({ onLogin, unlockSound }) => {
       document.removeEventListener('click', handleInteraction);
       document.removeEventListener('touchstart', handleInteraction);
     };
-  }, [unlock, unlockSound, playSound]);
+  }, [unlock, unlockSound]);
+
+  // Play startup sound during kernel boot phase
+  useEffect(() => {
+    if (phase === 'kernel' && !startupPlayed.current) {
+      startupPlayed.current = true;
+      playSound('startup', 0.4);
+    }
+  }, [phase, playSound]);
 
   // Live clock for login screen
   useEffect(() => {
