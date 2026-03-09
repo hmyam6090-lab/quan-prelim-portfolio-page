@@ -11,8 +11,8 @@ import { useCallback, useRef } from 'react';
  */
 
 const SOUND_PATHS = {
-  startup: '/sounds/startup.mp3',
-  click:   '/sounds/click.mp3',
+  startup: './sounds/startup.mp3',
+  click:   './sounds/click.mp3',
 };
 
 const useSound = (enabled = true) => {

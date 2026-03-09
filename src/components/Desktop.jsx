@@ -298,7 +298,7 @@ const Desktop = ({
               <span>photo1.jpg — Preview</span>
               <span className="photo-win-x">×</span>
             </div>
-            <img src="/photos/photo1.jpg" alt="" draggable={false} />
+            <img src="./photos/photo1.jpg" alt="" draggable={false} />
           </div>
           <div
             className={`desktop-photo-window pw-2 ${draggingPhoto?.photoId === 'pw2' ? 'dragging' : ''}`}
@@ -313,7 +313,7 @@ const Desktop = ({
               <span>photo3.jpg — Preview</span>
               <span className="photo-win-x">×</span>
             </div>
-            <img src="/photos/photo3.jpg" alt="" draggable={false} />
+            <img src="./photos/photo3.jpg" alt="" draggable={false} />
           </div>
           <div
             className={`desktop-photo-window pw-3 ${draggingPhoto?.photoId === 'pw3' ? 'dragging' : ''}`}
@@ -328,7 +328,7 @@ const Desktop = ({
               <span>photo5.jpg — Preview</span>
               <span className="photo-win-x">×</span>
             </div>
-            <img src="/photos/photo5.jpg" alt="" draggable={false} />
+            <img src="./photos/photo5.jpg" alt="" draggable={false} />
           </div>
         </>
       )}
