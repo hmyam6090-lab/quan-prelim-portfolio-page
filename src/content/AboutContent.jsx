@@ -35,7 +35,7 @@ const AboutContent = () => {
           </p>
           <p>
             My work spans React, Godot, Unity, and more, with projects ranging from web apps to experimental games. I'm currently focused on honing my game development skills and building a portfolio of fun, innovative projects. When I'm not coding, you can find me sketching game concepts, playing around with generative art, or diving into the latest game design trends.
-          </p>
+          </p>  
         </div>
 
         <div className="about-highlights">
@@ -51,10 +51,10 @@ const AboutContent = () => {
         </div>
 
         <div className="about-links">
-          <a href="https://github.com/hoangmanhquan" target="_blank" rel="noopener noreferrer" className="about-link">GitHub</a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="about-link">LinkedIn</a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="about-link">Instagram</a>
-        </div>
+          <a href="https://github.com/hmyam6090-lab" target="_blank" rel="noopener noreferrer" className="about-link">GitHub</a>
+          <a href="https://www.linkedin.com/in/qu%C3%A2n-m-ho%C3%A0ng-251160383/" target="_blank" rel="noopener noreferrer" className="about-link">LinkedIn</a>
+          <a href="https://www.instagram.com/jamesyboi64/" target="_blank" rel="noopener noreferrer" className="about-link">Instagram</a>
+        </div>  
       </div>
     </div>
   );
