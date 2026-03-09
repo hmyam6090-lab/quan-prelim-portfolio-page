@@ -873,3 +873,22 @@
 
   .creative-word { font-size: 40px; }
 }
+
+@media (max-width: 480px) {
+  .showcase { padding: 40px 0 32px; }
+
+  .showcase-row,
+  .showcase-row.reverse {
+    gap: 24px;
+    padding: 0 16px;
+    margin-bottom: 60px;
+  }
+
+  .gamedev-word-1,
+  .gamedev-word-2 { font-size: 28px; }
+
+  .webdev-line-1 { font-size: 30px; }
+  .webdev-line-2 { font-size: 24px; }
+
+  .creative-word { font-size: 30px; }
+}

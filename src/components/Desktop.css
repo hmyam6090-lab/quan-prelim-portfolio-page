@@ -221,12 +221,31 @@
 }
 
 @media (max-width: 768px) {
+  .desktop {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .desktop-perspective {
+    position: relative;
+    inset: auto;
+    transform: none !important;
+    transition: none;
+  }
+
   .hero-typography {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    padding: 48px 20px 24px;
     gap: 0;
   }
 
   .hero-line {
     gap: 8px;
+    justify-content: center;
   }
 
   .hero-sm {
@@ -241,13 +260,79 @@
     font-size: 56px;
   }
 
+  /* Icons: clean grid on mobile */
+  .desktop-icons-scattered {
+    position: relative;
+    inset: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 16px 16px 24px;
+    pointer-events: auto;
+  }
+
   .scattered-icon {
-    transform: scale(0.75);
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
   }
 
   .scattered-icon.visible {
-    transform: scale(0.75);
+    transform: none !important;
+    animation: mobileIconFadeIn 0.4s ease both;
   }
+
+  @keyframes mobileIconFadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .scattered-icon.dragging {
+    cursor: default;
+    filter: none;
+    opacity: 1;
+  }
+
+  /* Hide photo windows on mobile */
+  .desktop-photo-window {
+    display: none;
+  }
+
+  /* Scroll indicator */
+  .scroll-indicator {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    display: flex;
+    justify-content: center;
+    padding: 16px 0 32px;
+    opacity: 1;
+    animation: none;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .desktop-icons-scattered {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    padding: 12px 12px 20px;
+  }
+
+  .hero-typography {
+    padding: 36px 16px 16px;
+  }
+
+  .hero-sm { font-size: 16px; }
+  .hero-lg { font-size: 36px; }
+  .hero-xl { font-size: 44px; }
 }
 
 /* ── Scroll-down Indicator ── */

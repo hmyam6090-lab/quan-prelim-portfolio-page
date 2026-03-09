@@ -37,6 +37,26 @@
 
 .about-hero {
   margin-bottom: 32px;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.about-image-section {
+  flex-shrink: 0;
+}
+
+.about-profile-image {
+  width: 220px;
+  height: 220px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 3px solid #4A90D9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.about-hero-text {
+  flex: 1;
 }
 
 .about-name {
@@ -767,8 +787,43 @@
     padding: 24px 20px;
   }
 
+  .about-hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-hero-text {
+    order: 1;
+  }
+
+  .about-image-section {
+    order: 2;
+  }
+
+  .about-profile-image {
+    width: 160px;
+    height: 160px;
+  }
+
+  .about-name {
+    align-items: center;
+  }
+
   .name-serif {
     font-size: 42px;
+  }
+
+  .about-body {
+    gap: 20px;
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  .about-links {
+    justify-content: center;
   }
 
   .projects-header {
@@ -790,5 +845,13 @@
   .contact-title-serif,
   .contact-title-sans {
     font-size: 24px;
+  }
+
+  .highlight-tags {
+    justify-content: center;
+  }
+
+  .highlights-title {
+    text-align: center;
   }
 }

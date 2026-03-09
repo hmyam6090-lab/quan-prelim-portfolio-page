@@ -38,22 +38,33 @@ const KERNEL_LINES = [
   { text: '[  0.480] Initializing QuanOS Desktop..', type: 'go' },
 ];
 
-const LoginScreen = ({ onLogin }) => {
+const LoginScreen = ({ onLogin, unlockSound }) => {
   const [phase, setPhase] = useState('kernel'); // 'kernel' | 'login' | 'exiting'
   const [lineCount, setLineCount] = useState(0);
   const [bootProgress, setBootProgress] = useState(0);
   const [currentTime, setCurrentTime] = useState(new Date());
   const kernelRef = useRef(null);
-  const { play: playSound } = useSound();
+  const { play: playSound, unlock } = useSound();
   const startupPlayed = useRef(false);
 
-  // Play startup sound once at kernel boot
+  // Unlock audio on any click/touch during kernel phase
   useEffect(() => {
-    if (!startupPlayed.current) {
-      startupPlayed.current = true;
-      playSound('startup');
-    }
-  }, []);
+    const handleInteraction = () => {
+      unlock();
+      if (unlockSound) unlockSound();
+      // Play startup after unlock
+      if (!startupPlayed.current) {
+        startupPlayed.current = true;
+        playSound('startup', 0.4);
+      }
+    };
+    document.addEventListener('click', handleInteraction, { once: true });
+    document.addEventListener('touchstart', handleInteraction, { once: true });
+    return () => {
+      document.removeEventListener('click', handleInteraction);
+      document.removeEventListener('touchstart', handleInteraction);
+    };
+  }, [unlock, unlockSound, playSound]);
 
   // Live clock for login screen
   useEffect(() => {
@@ -89,7 +100,7 @@ const LoginScreen = ({ onLogin }) => {
 
   const handleLogin = () => {
     if (phase !== 'login') return;
-    playSound('click');
+    playSound('login', 0.4);
     setPhase('exiting');
     setTimeout(() => onLogin(), 600);
   };

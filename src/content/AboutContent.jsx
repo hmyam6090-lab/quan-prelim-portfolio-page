@@ -17,15 +17,20 @@ const AboutContent = () => {
   return (
     <div className="about-page content-section">
       <div className="about-hero">
-        <h1 className="about-name">
-          <span className="name-line">
-            <span className="name-hi">Hello, I'm</span>
-          </span>
-          <span className="name-line name-big">
-            <span className="name-serif">Quan</span>
-          </span>
-        </h1>
-        <p className="about-subtitle">{typedSubtitle}<span className="type-caret" aria-hidden="true">|</span></p>
+        <div className="about-hero-text">
+          <h1 className="about-name">
+            <span className="name-line">
+              <span className="name-hi">Hello, I'm</span>
+            </span>
+            <span className="name-line name-big">
+              <span className="name-serif">Quan</span>
+            </span>
+          </h1>
+          <p className="about-subtitle">{typedSubtitle}<span className="type-caret" aria-hidden="true">|</span></p>
+        </div>
+        <div className="about-image-section">
+          <img src="./photos/photo1.jpg" alt="Profile" className="about-profile-image" />
+        </div>
       </div>
 
       <div className="about-body">
@@ -51,9 +56,10 @@ const AboutContent = () => {
         </div>
 
         <div className="about-links">
+          <a href="mailto:hmyam6090@gmail.com" className="about-link">Email</a>
           <a href="https://github.com/hmyam6090-lab" target="_blank" rel="noopener noreferrer" className="about-link">GitHub</a>
           <a href="https://www.linkedin.com/in/qu%C3%A2n-m-ho%C3%A0ng-251160383/" target="_blank" rel="noopener noreferrer" className="about-link">LinkedIn</a>
-          <a href="https://www.instagram.com/jamesyboi64/" target="_blank" rel="noopener noreferrer" className="about-link">Instagram</a>
+          <a href="https://hmyam6090-lab.itch.io/" target="_blank" rel="noopener noreferrer" className="about-link">Itch.io</a>
         </div>  
       </div>
     </div>
