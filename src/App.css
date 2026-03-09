@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=Press+Start+2P&family=VT323&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --xp-blue: #4A90D9;
+  --xp-blue-light: #6BB3F0;
+  --xp-blue-dark: #2A5FA0;
+  --xp-green: #3DBC05;
+  --xp-orange: #FFA800;
+  --xp-red: #FF0000;
+  --window-border: #0831D9;
+  --window-title-start: #0058E6;
+  --window-title-end: #3A9BFF;
+  --taskbar-start: #245EDC;
+  --taskbar-end: #3F8CF3;
+  --font-pixel: 'Press Start 2P', 'VT323', monospace;
+  --font-serif: 'Playfair Display', 'DM Serif Display', 'Georgia', serif;
+  --font-sans: 'Space Grotesk', 'Inter', sans-serif;
+  --font-ui: Tahoma, 'Verdana', 'Trebuchet MS', sans-serif;
+  --bg-color: #ECECEC;
+}
+
+body {
+  font-family: var(--font-ui);
+  overflow-x: hidden;
+  cursor: default;
+  user-select: none;
+  background: var(--bg-color);
+}
+
+.app {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}

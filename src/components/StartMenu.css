@@ -1,0 +1,79 @@
+.start-menu {
+  position: absolute;
+  bottom: 36px;
+  left: 4px;
+  width: 280px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #ddd;
+  z-index: 999;
+  overflow: hidden;
+  animation: menuSlide 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes menuSlide {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.start-menu-header {
+  background: linear-gradient(135deg, #4A90D9 0%, #357ABD 100%);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.username {
+  font-family: 'Playfair Display', 'DM Serif Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+.start-menu-items {
+  padding: 8px 0;
+}
+
+.menu-item {
+  padding: 10px 20px;
+  font-family: 'Space Grotesk', Tahoma, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.15s;
+  user-select: none;
+}
+
+.menu-item:hover {
+  background: #f0f6ff;
+  color: #4A90D9;
+}
+
+.menu-item span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.start-menu-items hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 4px 16px;
+}
