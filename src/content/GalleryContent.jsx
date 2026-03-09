@@ -6,15 +6,15 @@ const GalleryContent = () => {
 
   // Placeholder photos — swap src with your own images
   const photos = [
-    { id: 1, src: '/photos/photo1.jpg', alt: 'Funny moment #1', caption: 'That one time...' },
-    { id: 2, src: '/photos/photo2.jpg', alt: 'Funny moment #2', caption: 'No context needed' },
-    { id: 3, src: '/photos/photo3.jpg', alt: 'Funny moment #3', caption: 'Peak comedy' },
-    { id: 4, src: '/photos/photo4.jpg', alt: 'Funny moment #4', caption: 'Certified classic' },
-    { id: 5, src: '/photos/photo5.jpg', alt: 'Funny moment #5', caption: 'Frame-worthy' },
-    { id: 6, src: '/photos/photo6.jpg', alt: 'Funny moment #6', caption: 'Iconic' },
-    { id: 7, src: '/photos/photo7.jpg', alt: 'Funny moment #7', caption: 'Legendary' },
-    { id: 8, src: '/photos/photo8.jpg', alt: 'Funny moment #8', caption: 'Unforgettable' },
-    { id: 9, src: '/photos/photo9.jpg', alt: 'Funny moment #9', caption: 'Chef\'s kiss' },
+    { id: 1, src: './photos/photo1.jpg', alt: 'Funny moment #1', caption: 'That one time...' },
+    { id: 2, src: './photos/photo2.jpg', alt: 'Funny moment #2', caption: 'No context needed' },
+    { id: 3, src: './photos/photo3.jpg', alt: 'Funny moment #3', caption: 'Peak comedy' },
+    { id: 4, src: './photos/photo4.jpg', alt: 'Funny moment #4', caption: 'Certified classic' },
+    { id: 5, src: './photos/photo5.jpg', alt: 'Funny moment #5', caption: 'Frame-worthy' },
+    { id: 6, src: './photos/photo6.jpg', alt: 'Funny moment #6', caption: 'Iconic' },
+    { id: 7, src: './photos/photo7.jpg', alt: 'Funny moment #7', caption: 'Legendary' },
+    { id: 8, src: './photos/photo8.jpg', alt: 'Funny moment #8', caption: 'Unforgettable' },
+    { id: 9, src: './photos/photo9.jpg', alt: 'Funny moment #9', caption: 'Chef\'s kiss' },
   ];
 
   return (
