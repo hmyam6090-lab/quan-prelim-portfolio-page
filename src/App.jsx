@@ -13,7 +13,7 @@ function App() {
   const [activeWindowId, setActiveWindowId] = useState(null);
   const [showStartMenu, setShowStartMenu] = useState(false);
   const [highestZIndex, setHighestZIndex] = useState(100);
-  const { play: playSound } = useSound();
+  const { play: playSound, unlock: unlockSound } = useSound();
 
   const openWindow = (windowId) => {
     const existingWindow = windows.find(w => w.id === windowId);
@@ -39,7 +39,7 @@ function App() {
 
     setWindows([...windows, newWindow]);
     setActiveWindowId(windowId);
-    playSound('click');
+    playSound('windowOpen');
   };
 
   const closeWindow = (windowId) => {
@@ -93,7 +93,7 @@ function App() {
   return (
     <div className="app">
       {!isLoggedIn ? (
-        <LoginScreen onLogin={() => setIsLoggedIn(true)} />
+        <LoginScreen onLogin={() => setIsLoggedIn(true)} unlockSound={unlockSound} />
       ) : (
         <>
           <Desktop 

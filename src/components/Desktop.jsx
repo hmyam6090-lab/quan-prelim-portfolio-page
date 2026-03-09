@@ -17,6 +17,15 @@ const Desktop = ({
   const desktopRef = useRef(null);
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const [loaded, setLoaded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
 
   // Desktop icons — matching the screenshot layout
   const desktopIcons = [
@@ -214,12 +223,15 @@ const Desktop = ({
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  const getParallaxStyle = (depth) => ({
-    transform: `translate(${mouse.x * depth * 20}px, ${mouse.y * depth * 20}px)`,
-  });
+  const getParallaxStyle = (depth) => {
+    if (isMobile) return {};
+    return {
+      transform: `translate(${mouse.x * depth * 20}px, ${mouse.y * depth * 20}px)`,
+    };
+  };
 
   // Whole-screen perspective tilt
-  const perspectiveStyle = {
+  const perspectiveStyle = isMobile ? {} : {
     transform: `perspective(1200px) rotateY(${mouse.x * 3}deg) rotateX(${-mouse.y * 3}deg)`,
   };
 
@@ -260,7 +272,7 @@ const Desktop = ({
                 transitionDelay: isDraggingThis ? '0s' : `${index * 0.04}s`,
                 zIndex: isDraggingThis ? 100 : undefined,
               }}
-              onMouseDown={(e) => handleIconMouseDown(e, icon.id)}
+              onMouseDown={(e) => !isMobile && handleIconMouseDown(e, icon.id)}
             >
               <DesktopIcon
                 id={icon.id}

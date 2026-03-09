@@ -1,6 +1,19 @@
+import { useRef, useCallback } from 'react';
 import './DesktopIcon.css';
 
 const DesktopIcon = ({ label, iconType, onDoubleClick, isInteractive = true }) => {
+  const lastTap = useRef(0);
+
+  // Handle touch: double-tap on mobile
+  const handleTouchEnd = useCallback((e) => {
+    if (!onDoubleClick) return;
+    const now = Date.now();
+    if (now - lastTap.current < 400) {
+      e.preventDefault();
+      onDoubleClick();
+    }
+    lastTap.current = now;
+  }, [onDoubleClick]);
   // Clean, bigger XP-style icon SVGs
   const iconSvgs = {
     folder: `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
@@ -151,6 +164,7 @@ const DesktopIcon = ({ label, iconType, onDoubleClick, isInteractive = true }) =
     <div
       className={`desktop-icon ${isInteractive ? 'interactive' : 'decorative'}`}
       onDoubleClick={onDoubleClick}
+      onTouchEnd={handleTouchEnd}
     >
       <div className="icon-image-wrapper">
         <img src={iconSvg} alt={label} draggable={false} />
