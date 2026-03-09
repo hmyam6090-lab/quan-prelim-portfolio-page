@@ -24,7 +24,7 @@ const sectionContent = {
           'Won the IDEA350 course hackathon',
         ],
         media: [
-          { type: 'video', src: '/videos/game_reel.mov', caption: 'Gameplay trailer' },
+          { type: 'video', src: './videos/game_reel.mov', caption: 'Gameplay trailer' },
         ],
         links: [
           { label: 'Play on Itch.io', url: 'https://hmyam6090-lab.itch.io/' },
@@ -42,7 +42,7 @@ const sectionContent = {
           'Replayable arcade loop',
         ],
         media: [
-          { type: 'video', src: '/videos/bytepath.mov', caption: 'Movement Prototype' },
+          { type: 'video', src: './videos/bytepath.mov', caption: 'Movement Prototype' },
         ],
         links: [],
       },
@@ -58,8 +58,8 @@ const sectionContent = {
           'Lethal Company–inspired scavenging loop',
         ],
         media: [
-          { type: 'image', src: '/images/beyond-cooked-1.png', caption: 'Home Screen' },
-          { type: 'image', src: '/images/beyond-cooked-2.png', caption: 'Tutorial' },
+          { type: 'image', src: './images/beyond-cooked-1.png', caption: 'Home Screen' },
+          { type: 'image', src: './images/beyond-cooked-2.png', caption: 'Tutorial' },
         ],
         links: [],
       },
@@ -75,8 +75,8 @@ const sectionContent = {
           'Playtesting & technical documentation',
         ],
         media: [
-          { type: 'image', src: '/images/indie-games-1.gif', caption: 'Flappy Bird as a Volume Control' },
-          { type: 'image', src: '/images/indie-games-2.gif', caption: 'Untitled Snowball Game' },
+          { type: 'image', src: './images/indie-games-1.gif', caption: 'Flappy Bird as a Volume Control' },
+          { type: 'image', src: './images/indie-games-2.gif', caption: 'Untitled Snowball Game' },
         ],
         links: [
           { label: 'Itch.io Profile', url: 'https://hmyam6090-lab.itch.io/' },
@@ -102,7 +102,7 @@ const sectionContent = {
           'Kernel boot animation & login screen',
         ],
         media: [
-          { type: 'image', src: '/images/portfolio-screenshot.png', caption: 'Desktop view' },
+          { type: 'image', src: './images/portfolio-screenshot.png', caption: 'Desktop view' },
         ],
         links: [
           { label: 'Source Code', url: 'https://github.com/hmyam6090-lab' },
@@ -120,8 +120,8 @@ const sectionContent = {
           'Firebase authentication & Firestore backend',
         ],
         media: [
-          { type: 'image', src: '/images/testing-page.png', caption: 'Testing interface' },
-          { type: 'image', src: '/images/webapp-screenshot.png', caption: 'Dashboard' },
+          { type: 'image', src: './images/testing-page.png', caption: 'Testing interface' },
+          { type: 'image', src: './images/webapp-screenshot.png', caption: 'Dashboard' },
         ],
         links: [
           { label: 'Live Demo', url: 'https://mos-transcription.web.app/' },
@@ -139,7 +139,7 @@ const sectionContent = {
           'Optimized for web performance',
         ],
         media: [
-          { type: 'video', src: '/videos/portal.mov', caption: 'Portal scene demo' },
+          { type: 'video', src: './videos/portal.mov', caption: 'Portal scene demo' },
         ],
         links: [
           { label: 'Live Demo', url: 'https://hmyam6090-lab.github.io/portal-scene-threejs/' },
@@ -158,10 +158,10 @@ const sectionContent = {
           'Approved by Vietnamese government for national relic deployment',
         ],
         media: [
-          { type: 'image', src: '/images/stg-1.jpg', caption: 'Map Interface' },
-          { type: 'image', src: '/images/stg-2.jpg', caption: 'Hardware Installed Onsite' },
-          { type: 'image', src: '/images/stg-3.jpg', caption: 'Main Menu' },
-          { type: 'image', src: '/images/stg-4.jpg', caption: 'Multilingual support' },
+          { type: 'image', src: './images/stg-1.jpg', caption: 'Map Interface' },
+          { type: 'image', src: './images/stg-2.jpg', caption: 'Hardware Installed Onsite' },
+          { type: 'image', src: './images/stg-3.jpg', caption: 'Main Menu' },
+          { type: 'image', src: './images/stg-4.jpg', caption: 'Multilingual support' },
         ],
         links: [
           { label: 'News Article', url: 'https://e.vnexpress.net/news/news/education/ai-tour-guide-invention-lands-vietnamese-student-400-000-scholarship-at-us-top-liberal-arts-university-4869263.html' },
@@ -187,10 +187,10 @@ const sectionContent = {
           'Audio visualizers & generative art',
         ],
         media: [
-          { type: 'video', src: '/videos/pvz.mov', caption: 'PvZ remake' },
-          { type: 'video', src: '/videos/creative_reel.mov', caption: 'Voxel drawing app' },
-          { type: 'image', src: '/images/candlepomo.png', caption: 'Candle Pomodoro' },
-          { type: 'image', src: '/images/breaking-bad.png', caption: 'Breaking Bad Poster' },
+          { type: 'video', src: './videos/pvz.mov', caption: 'PvZ remake' },
+          { type: 'video', src: './videos/creative_reel.mov', caption: 'Voxel drawing app' },
+          { type: 'image', src: './images/candlepomo.png', caption: 'Candle Pomodoro' },
+          { type: 'image', src: './images/breaking-bad.png', caption: 'Breaking Bad Poster' },
         ],
         links: [
           { label: 'GitHub Profile', url: 'https://github.com/hmyam6090-lab' },
@@ -215,7 +215,7 @@ const sectionContent = {
           'Community engagement and code reviews',
         ],
         media: [
-          { type: 'image', src: '/images/404custom.png', caption: 'Contributed custom 404 page to L5 Library' },
+          { type: 'image', src: './images/404custom.png', caption: 'Contributed custom 404 page to L5 Library' },
         ],
         links: [
           { label: 'GitHub Profile', url: 'https://github.com/hmyam6090-lab' },
@@ -233,7 +233,7 @@ const sectionContent = {
           'ROS system integration',
         ],
         media: [
-          { type: 'image', src: '/images/finished_FDC.jpg', caption: 'Soldered FDC1004 chip' },
+          { type: 'image', src: './images/finished_FDC.jpg', caption: 'Soldered FDC1004 chip' },
         ],
         links: [
           { label: 'Lab GitHub', url: 'https://github.com/Wesleyan-Soft-Robots-Lab' },
@@ -252,7 +252,7 @@ const sectionContent = {
           'Reproducible pipeline for non-expert users',
         ],
         media: [
-          { type: 'image', src: '/images/insects.gif', caption: 'Insect tracking in action' },
+          { type: 'image', src: './images/insects.gif', caption: 'Insect tracking in action' },
         ],
         links: [
           { label: 'GitHub Repo', url: 'https://github.com/Wesleyan-Soft-Robots-Lab/Modular-NAPS' },

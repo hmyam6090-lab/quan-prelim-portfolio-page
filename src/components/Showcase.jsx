@@ -318,7 +318,7 @@ const Showcase = () => {
           <div className="sc-win-body gamedev-body">
             <video
               className="gamedev-video"
-              src="/videos/game_reel.mov"
+              src="./videos/game_reel.mov"
               autoPlay
               loop
               muted
@@ -359,7 +359,7 @@ const Showcase = () => {
                 <span>portfolio — Preview</span>
               </div>
               <div className="webdev-ss-body">
-                <img src="/images/portfolio-screenshot.png" alt="Portfolio Site" className="webdev-ss-img" />
+                <img src="./images/portfolio-screenshot.png" alt="Portfolio Site" className="webdev-ss-img" />
               </div>
             </div>
             <div className="webdev-ss-window">
@@ -368,7 +368,7 @@ const Showcase = () => {
                 <span>Vbee — Preview</span>
               </div>
               <div className="webdev-ss-body">
-                <img src="/images/webapp-screenshot.png" alt="Web App" className="webdev-ss-img" />
+                <img src="./images/webapp-screenshot.png" alt="Web App" className="webdev-ss-img" />
               </div>
             </div>
           </div>
@@ -426,7 +426,7 @@ const Showcase = () => {
                 <div className="sc-win-body creative-video-body">
                   <video
                     className="creative-video"
-                    src="/videos/creative_reel.mov"
+                    src="./videos/creative_reel.mov"
                     autoPlay
                     loop
                     muted
