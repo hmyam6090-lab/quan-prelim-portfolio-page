@@ -44,14 +44,36 @@ const LoginScreen = ({ onLogin, unlockSound }) => {
   const [bootProgress, setBootProgress] = useState(0);
   const [currentTime, setCurrentTime] = useState(new Date());
   const kernelRef = useRef(null);
+  const startupAudioRef = useRef(null);
   const { play: playSound, unlock } = useSound();
-  const startupPlayed = useRef(false);
+
+  // Initialize and control startup audio based on phase
+  useEffect(() => {
+    if (phase === 'kernel') {
+      // Create audio if not exists
+      if (!startupAudioRef.current) {
+        startupAudioRef.current = new Audio('./sounds/startup.mp3');
+        startupAudioRef.current.volume = 0.4;
+      }
+      // Play it (will be blocked by autoplay until unlock)
+      startupAudioRef.current.currentTime = 0;
+      startupAudioRef.current.play().catch(() => {});
+    } else if (phase === 'login' && startupAudioRef.current) {
+      // Stop and clean up when leaving kernel phase
+      startupAudioRef.current.pause();
+      startupAudioRef.current.currentTime = 0;
+    }
+  }, [phase]);
 
   // Unlock audio on any click/touch during kernel phase
   useEffect(() => {
     const handleInteraction = () => {
       unlock();
       if (unlockSound) unlockSound();
+      // Once unlock is called, try to play startup audio again (now that autoplay is allowed)
+      if (phase === 'kernel' && startupAudioRef.current) {
+        startupAudioRef.current.play().catch(() => {});
+      }
     };
     document.addEventListener('click', handleInteraction, { once: true });
     document.addEventListener('touchstart', handleInteraction, { once: true });
@@ -59,15 +81,7 @@ const LoginScreen = ({ onLogin, unlockSound }) => {
       document.removeEventListener('click', handleInteraction);
       document.removeEventListener('touchstart', handleInteraction);
     };
-  }, [unlock, unlockSound]);
-
-  // Play startup sound during kernel boot phase
-  useEffect(() => {
-    if (phase === 'kernel' && !startupPlayed.current) {
-      startupPlayed.current = true;
-      playSound('startup', 0.4);
-    }
-  }, [phase, playSound]);
+  }, [unlock, unlockSound, phase]);
 
   // Live clock for login screen
   useEffect(() => {
