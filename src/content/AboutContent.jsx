@@ -23,13 +23,13 @@ const AboutContent = () => {
               <span className="name-hi">Hello, I'm</span>
             </span>
             <span className="name-line name-big">
-              <span className="name-serif">Quan</span>
+              <span className="name-serif">Quan Hoang</span>
             </span>
           </h1>
           <p className="about-subtitle">{typedSubtitle}<span className="type-caret" aria-hidden="true">|</span></p>
         </div>
         <div className="about-image-section">
-          <img src="./photos/photo1.jpg" alt="Profile" className="about-profile-image" />
+          <img src="./photos/headshot.png" alt="Profile" className="about-profile-image" />
         </div>
       </div>
 
