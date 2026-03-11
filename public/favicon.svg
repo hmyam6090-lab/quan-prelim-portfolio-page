@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90D9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2A5FA0;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="url(#bgGrad)" filter="url(#glow)"/>
+  
+  <!-- Outer ring -->
+  <circle cx="32" cy="32" r="30" fill="none" stroke="#1a3d7a" stroke-width="1.5" opacity="0.6"/>
+  
+  <!-- Q shape - stylized -->
+  <!-- Q circle -->
+  <circle cx="32" cy="26" r="14" fill="none" stroke="#fff" stroke-width="2.5"/>
+  
+  <!-- Q tail -->
+  <path d="M 44 36 Q 45 42 38 44" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- Center dot for tech feeling -->
+  <circle cx="32" cy="26" r="3" fill="#fff" opacity="0.8"/>
+  
+  <!-- Small accent elements (circuit-like) -->
+  <line x1="18" y1="32" x2="22" y2="32" stroke="#7cb3f0" stroke-width="1.5" opacity="0.7"/>
+  <line x1="42" y1="32" x2="46" y2="32" stroke="#7cb3f0" stroke-width="1.5" opacity="0.7"/>
+  <circle cx="17" cy="32" r="1.5" fill="#7cb3f0" opacity="0.8"/>
+  <circle cx="47" cy="32" r="1.5" fill="#7cb3f0" opacity="0.8"/>
+</svg>
