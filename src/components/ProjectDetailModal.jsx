@@ -31,6 +31,30 @@ const sectionContent = {
         ],
       },
       {
+        name: 'Fluidity',
+        subtitle: 'Softbody Physics-based educational platformer',
+        tags: ['Godot 2D', 'GDScript', 'Physics'],
+        description: `Designed and developed core game mechanics for a physics-based 2D educational platformer where players switch between water states (solid, liquid, gas) to solve level puzzles.
+
+Led technical development of the gameplay loop and player progression model in collaboration with a 5-person team.
+
+Created and maintained design documentation including feature specs and task breakdowns; managed 13-week Agile/Scrum cycle using GitHub Projects.
+
+Organized playtesting sessions, collected player feedback, and iterated on mechanics for a grades 2–5 audience; presented finished game at MacDonough Primary School with 100+ student players.
+
+Collaborated with a team of 5, with producers, artists, musicians and other scripters to adapt game features for target platform and player behaviors, incorporating weekly feedback from Prof. Christopher Weaver (founder, Bethesda Softworks) and industry guest lecturers, like Bob Bates, John Romero, Kent Quirk.`,
+        features: [
+          'Music/Art/VFX made in house by a team of 5 with artists and musicians',
+          'Water-state swapping between solid, liquid, and gas',
+          'Gameplay loop and progression co-developed with a 5-person team',
+          'Design docs, feature specs, and task breakdowns',
+          '13-week Agile/Scrum production cycle with GitHub Projects',
+          'Playtested for grades 2–5 and presented to 100+ students',
+        ],
+        media: [{ type: 'video', src: './videos/demo.mp4', caption: 'Demo Gameplay' },],
+        links: [],
+      },
+      {
         name: 'BYTEDIEP: A BYTEPATH Variation',
         subtitle: 'Replayable arcade shooter — In Progress',
         tags: ['Lua', 'LOVE2D'],
@@ -42,9 +66,10 @@ const sectionContent = {
           'Replayable arcade loop',
         ],
         media: [
+          { type: 'video', src: './videos/bytepath_gameplay.mov', caption: 'Demo Gameplay' },
           { type: 'video', src: './videos/bytepath.mov', caption: 'Movement Prototype' },
         ],
-        links: [],
+        links: [{ label: 'Check out on GitHub!', url: 'https://github.com/hmyam6090-lab/BYTEDIEP---BYTEPATH-VARIATION' },],
       },
       {
         name: 'Beyond Cooked',
@@ -61,7 +86,7 @@ const sectionContent = {
           { type: 'image', src: './images/beyond-cooked-1.png', caption: 'Home Screen' },
           { type: 'image', src: './images/beyond-cooked-2.png', caption: 'Tutorial' },
         ],
-        links: [],
+        links: [{ label: 'Source Code On GitHub', url: 'https://github.com/hmyam6090-lab/Beyond-Cooked' },],
       },
       {
         name: 'Solo Independent Game Development',
@@ -358,7 +383,7 @@ const ProjectDetailModal = ({ sectionId, onClose }) => {
                 <div className="pdm-media">
                   {project.media.map((m, i) => (
                     <div key={i} className="pdm-media-item">
-                      {m.type === 'image' ? (
+                      {(m.type === 'image' || m.type === 'gif' || /\.(gif|png|jpe?g|webp|bmp|svg)$/i.test(m.src)) ? (
                         <img src={m.src} alt={m.caption} className="pdm-media-img" />
                       ) : (
                         <video
