@@ -149,7 +149,6 @@ Collaborated with a team of 5, with producers, artists, musicians and other scri
           { type: 'image', src: './images/webapp-screenshot.png', caption: 'Dashboard' },
         ],
         links: [
-          { label: 'Live Demo', url: 'https://mos-transcription.web.app/' },
         ],
       },
       {
