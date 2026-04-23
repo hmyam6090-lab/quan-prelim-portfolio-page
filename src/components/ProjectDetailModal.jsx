@@ -51,7 +51,7 @@ Collaborated with a team of 5, with producers, artists, musicians and other scri
           '13-week Agile/Scrum production cycle with GitHub Projects',
           'Playtested for grades 2–5 and presented to 100+ students',
         ],
-        media: [{ type: 'video', src: './videos/demo.mp4', caption: 'Demo Gameplay' },],
+        media: [{ type: 'video', src: './videos/game_demo.mp4', caption: 'Demo Gameplay' },],
         links: [],
       },
       {

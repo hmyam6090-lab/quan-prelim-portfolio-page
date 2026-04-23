@@ -4,7 +4,7 @@ import './Content.css';
 const GalleryContent = () => {
   const [selectedPhoto, setSelectedPhoto] = useState(null);
 
-  // Placeholder photos — swap src with your own images
+  // Placeholder photos
   const photos = [
     { id: 1, src: './photos/photo1.jpg', alt: 'Funny moment #1', caption: 'That one time...' },
     { id: 2, src: './photos/photo2.jpg', alt: 'Funny moment #2', caption: 'No context needed' },
