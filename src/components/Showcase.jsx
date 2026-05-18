@@ -313,26 +313,34 @@ const Showcase = () => {
         <div className="showcase-win gamedev-win">
           <div className="sc-win-bar gamedev-bar">
             <div className="sc-win-dots"><span /><span /><span /></div>
-            <span>game_reel.mp4 — QuanOS Media Player</span>
+            <span>game_media/ — QuanOS Media Player</span>
           </div>
           <div className="sc-win-body gamedev-body">
-            <video
-              className="gamedev-video"
-              src="./videos/game_reel.mov"
-              autoPlay
-              loop
-              muted
-              playsInline
-            />
-            <div className="gamedev-video-ph">
-              <div className="pixel-grid">
-                {Array.from({ length: 64 }).map((_, i) => (
-                  <div key={i} className="pixel" style={{ animationDelay: `${(i % 8) * 0.15 + Math.floor(i / 8) * 0.1}s` }} />
-                ))}
+            {[
+              { fileName: 'game_reel.mov', src: './videos/game_reel.mov' },
+              { fileName: 'fluidity-trailer.mp4', src: './videos/fluidity-trailer.mp4' },
+            ].map((media) => (
+              <div key={media.fileName} className="gamedev-media-card">
+                <span className="gamedev-media-label">{media.fileName}</span>
+                <video
+                  className="gamedev-video"
+                  src={media.src}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+                <div className="gamedev-video-ph">
+                  <div className="pixel-grid">
+                    {Array.from({ length: 64 }).map((_, i) => (
+                      <div key={i} className="pixel" style={{ animationDelay: `${(i % 8) * 0.15 + Math.floor(i / 8) * 0.1}s` }} />
+                    ))}
+                  </div>
+                  <span className="gamedev-ph-text">▶ {media.fileName}</span>
+                  <span className="gamedev-ph-sub">Place your video in /public/videos/</span>
+                </div>
               </div>
-              <span className="gamedev-ph-text">▶ game_reel.mp4</span>
-              <span className="gamedev-ph-sub">Place your video in /public/videos/</span>
-            </div>
+            ))}
           </div>
         </div>
       </div>
