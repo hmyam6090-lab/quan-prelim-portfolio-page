@@ -13,6 +13,35 @@ const sectionContent = {
     accent: '#FFD54F',
     projects: [
       {
+        name: 'Fluidity',
+        subtitle: 'Softbody Physics-based educational platformer',
+        tags: ['Godot 2D', 'GDScript', 'Physics'],
+        description: `As lead programmer on Fluidity, I owned the technical direction for a physics-based 2D educational platformer where players switch between water states to solve level puzzles. I was responsible for turning the team's design goals into working game systems that felt readable, responsive, and age-appropriate for young players.
+
+I designed and implemented the core gameplay architecture, including the player controller, state-switching logic across solid, liquid, and gas forms, and the progression loop that structured how mechanics were introduced across levels. I also drove the technical decision-making around how the game's softbody-inspired behaviors should translate into puzzle design and player feedback.
+
+Beyond implementation, I led programming workflows for the team by breaking features into scoped tasks, maintaining design and technical documentation, and running a 13-week Agile/Scrum production cycle through GitHub Projects. That work kept engineering, design, and content production aligned as we moved from prototype to classroom-ready build.
+
+I collaborated closely with producers, artists, musicians, and fellow scripters to integrate assets, tune mechanics, and adapt features based on weekly feedback from Prof. Christopher Weaver and visiting industry lecturers including Bob Bates, John Romero, and Kent Quirk. I also supported playtesting by debugging issues quickly, interpreting player behavior, and identifying where the game needed clearer onboarding or mechanical adjustments.
+
+The final game was presented at MacDonough Primary School, where 100+ students played it and gave us direct feedback. That playtest environment shaped how I refined the game's pacing, readability, and overall technical polish as lead programmer.`,
+        features: [
+          'Lead programmer for core gameplay architecture and technical direction',
+          'Built water-state switching across solid, liquid, and gas forms',
+          'Owned player controller, progression flow, and puzzle-system implementation',
+          'Managed design docs, engineering scope, and GitHub Projects planning',
+          'Coordinated technical integration across a 5-person cross-discipline team',
+          'Iterated from school playtests with 100+ elementary student players',
+        ],
+        media: [
+          { type: 'video', src: './videos/game_demo.mp4', caption: 'Demo gameplay' },
+          { type: 'video', src: './videos/fluidity-trailer.mp4', caption: 'Official trailer' },
+        ],
+        links: [
+          { label: 'Visit Project Website', url: 'https://fluidity-website.vercel.app/' },
+        ],
+      },
+      {
         name: 'House Of Illusions',
         subtitle: 'Fast-paced puzzle platformer — Hackathon Winner',
         tags: ['Godot 2D', 'GDScript'],
@@ -29,30 +58,6 @@ const sectionContent = {
         links: [
           { label: 'Play on Itch.io', url: 'https://hmyam6090-lab.itch.io/' },
         ],
-      },
-      {
-        name: 'Fluidity',
-        subtitle: 'Softbody Physics-based educational platformer',
-        tags: ['Godot 2D', 'GDScript', 'Physics'],
-        description: `Designed and developed core game mechanics for a physics-based 2D educational platformer where players switch between water states (solid, liquid, gas) to solve level puzzles.
-
-Led technical development of the gameplay loop and player progression model in collaboration with a 5-person team.
-
-Created and maintained design documentation including feature specs and task breakdowns; managed 13-week Agile/Scrum cycle using GitHub Projects.
-
-Organized playtesting sessions, collected player feedback, and iterated on mechanics for a grades 2–5 audience; presented finished game at MacDonough Primary School with 100+ student players.
-
-Collaborated with a team of 5, with producers, artists, musicians and other scripters to adapt game features for target platform and player behaviors, incorporating weekly feedback from Prof. Christopher Weaver (founder, Bethesda Softworks) and industry guest lecturers, like Bob Bates, John Romero, Kent Quirk.`,
-        features: [
-          'Music/Art/VFX made in house by a team of 5 with artists and musicians',
-          'Water-state swapping between solid, liquid, and gas',
-          'Gameplay loop and progression co-developed with a 5-person team',
-          'Design docs, feature specs, and task breakdowns',
-          '13-week Agile/Scrum production cycle with GitHub Projects',
-          'Playtested for grades 2–5 and presented to 100+ students',
-        ],
-        media: [{ type: 'video', src: './videos/game_demo.mp4', caption: 'Demo Gameplay' },],
-        links: [],
       },
       {
         name: 'BYTEDIEP: A BYTEPATH Variation',
