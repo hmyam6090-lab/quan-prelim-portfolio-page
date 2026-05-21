@@ -34,7 +34,6 @@ The final game was presented at MacDonough Primary School, where 100+ students p
           'Iterated from school playtests with 100+ elementary student players',
         ],
         media: [
-          { type: 'video', src: './videos/game_demo.mp4', caption: 'Demo gameplay' },
           { type: 'video', src: './videos/fluidity-trailer.mp4', caption: 'Official trailer' },
         ],
         links: [
