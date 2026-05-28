@@ -31,7 +31,7 @@ The final game was presented at MacDonough Primary School, where students of gra
           'Owned player controller, progression flow, and puzzle-system implementation',
           'Managed design docs, engineering scope, and GitHub Projects planning',
           'Coordinated technical integration across a 5-person cross-discipline team',
-          'Iterated from school playtests with 100+ elementary student players',
+          'Iterated from school playtests with elementary student players',
         ],
         media: [
           { type: 'video', src: './videos/fluidity-trailer.mp4', caption: 'Official trailer' },
