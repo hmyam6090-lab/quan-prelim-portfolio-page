@@ -24,7 +24,7 @@ Beyond implementation, I led programming workflows for the team by breaking feat
 
 I collaborated closely with producers, artists, musicians, and fellow scripters to integrate assets, tune mechanics, and adapt features based on weekly feedback from Prof. Christopher Weaver and visiting industry lecturers including Bob Bates, John Romero, and Kent Quirk. I also supported playtesting by debugging issues quickly, interpreting player behavior, and identifying where the game needed clearer onboarding or mechanical adjustments.
 
-The final game was presented at MacDonough Primary School, where 100+ students played it and gave us direct feedback. That playtest environment shaped how I refined the game's pacing, readability, and overall technical polish as lead programmer.`,
+The final game was presented at MacDonough Primary School, where students of grade 2-5 played it and gave us direct feedback. That playtest environment shaped how I refined the game's pacing, readability, and overall technical polish as lead programmer.`,
         features: [
           'Lead programmer for core gameplay architecture and technical direction',
           'Built water-state switching across solid, liquid, and gas forms',
