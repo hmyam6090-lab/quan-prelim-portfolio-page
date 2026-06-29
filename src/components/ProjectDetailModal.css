@@ -205,6 +205,32 @@
 .pdm-dark .pdm-project-sub { color: #888; }
 .pdm-light .pdm-project-sub { color: #888; }
 
+.pdm-my-role,
+.pdm-tech-highlights,
+.pdm-skills-block {
+  margin-bottom: 20px;
+}
+
+.pdm-my-role p,
+.pdm-detail-paragraph {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.pdm-dark .pdm-my-role p,
+.pdm-dark .pdm-detail-paragraph { color: #bbb; }
+
+.pdm-light .pdm-my-role p,
+.pdm-light .pdm-detail-paragraph { color: #555; }
+
+.pdm-skills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
 /* Tags */
 .pdm-tags {
   display: flex;
@@ -300,6 +326,19 @@
   width: 100%;
   height: 200px;
   object-fit: cover;
+  display: block;
+}
+
+.pdm-youtube-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #0b0b0b;
+}
+
+.pdm-youtube-embed {
+  width: 100%;
+  height: 100%;
+  border: 0;
   display: block;
 }
 
