@@ -165,7 +165,7 @@ const sectionContent = {
         subtitle: 'Lead Gameplay Programmer & Producer | Godot 4 | Team Project (Game Jam / Internship)',
         role: 'Lead Gameplay Programmer & Producer',
         tags: ['Godot 4', 'GDScript', 'Narrative Deduction', 'Puzzle Systems'],
-        description: `A narrative deduction game where players act as the editor of a summer camp newspaper. NPCs submit conflicting witness reports, photographs, and physical evidence, and the player cross-references information to reconstruct the most plausible version of events before publishing the next day\'s paper.`,
+        description: `A narrative deduction game where players act as the editor of a summer camp newspaper. NPCs submit conflicting witness reports, photographs, and physical evidence, and the player cross-references information to reconstruct the most plausible version of events before publishing the next day\'s paper.\n\nBuilt for Summer Comfy Jam 2026, the project ranked 75th out of approximately 450 submissions.`,
         myRole: 'As the gameplay programmer, I was responsible for designing and implementing the game\'s core deduction systems and player interaction loop.',
         keyContributions: [
           'Architected the evidence system supporting witness testimonies, photographs, and physical objects',
@@ -189,7 +189,9 @@ const sectionContent = {
           { type: 'image', src: './images/tmiwt1.png', caption: 'Evidence board screenshot' },
           { type: 'image', src: './images/tmiwt2.png', caption: 'Newspaper drafting screenshot' },
         ],
-        links: [],
+        links: [
+          { label: 'Play on Itch.io', url: 'https://hmyam6090-lab.itch.io/trust-me-i-was-there' },
+        ],
       },
     ],
   },
