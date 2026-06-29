@@ -6,285 +6,190 @@ import './ProjectDetailModal.css';
    ═══════════════════════════════════════ */
 
 const sectionContent = {
-  gamedev: {
-    title: 'Game Development',
-    windowTitle: 'game-dev-README.md — QuanOS Viewer',
+  fluidity: {
+    title: 'Fluidity',
+    windowTitle: 'fluidity-README.md - QuanOS Viewer',
     barColor: '#2a2a2a',
-    accent: '#FFD54F',
+    accent: '#45c9ff',
     projects: [
       {
         name: 'Fluidity',
-        subtitle: 'Softbody Physics-based educational platformer',
-        tags: ['Godot 2D', 'GDScript', 'Physics'],
-        description: `As lead programmer on Fluidity, I owned the technical direction for a physics-based 2D educational platformer where players switch between water states to solve level puzzles. I was responsible for turning the team's design goals into working game systems that felt readable, responsive, and age-appropriate for young players.
-
-I designed and implemented the core gameplay architecture, including the player controller, state-switching logic across solid, liquid, and gas forms, and the progression loop that structured how mechanics were introduced across levels. I also drove the technical decision-making around how the game's softbody-inspired behaviors should translate into puzzle design and player feedback.
-
-Beyond implementation, I led programming workflows for the team by breaking features into scoped tasks, maintaining design and technical documentation, and running a 13-week Agile/Scrum production cycle through GitHub Projects. That work kept engineering, design, and content production aligned as we moved from prototype to classroom-ready build.
-
-I collaborated closely with producers, artists, musicians, and fellow scripters to integrate assets, tune mechanics, and adapt features based on weekly feedback from Prof. Christopher Weaver and visiting industry lecturers including Bob Bates, John Romero, and Kent Quirk. I also supported playtesting by debugging issues quickly, interpreting player behavior, and identifying where the game needed clearer onboarding or mechanical adjustments.
-
-The final game was presented at MacDonough Primary School, where students of grade 2-5 played it and gave us direct feedback. That playtest environment shaped how I refined the game's pacing, readability, and overall technical polish as lead programmer.`,
-        features: [
-          'Lead programmer for core gameplay architecture and technical direction',
-          'Built water-state switching across solid, liquid, and gas forms',
-          'Owned player controller, progression flow, and puzzle-system implementation',
-          'Managed design docs, engineering scope, and GitHub Projects planning',
-          'Coordinated technical integration across a 5-person cross-discipline team',
-          'Iterated from school playtests with elementary student players',
+        subtitle: 'Lead Gameplay Programmer | Godot 2D | Team Project',
+        role: 'Lead Gameplay Programmer',
+        tags: ['Godot 2D', 'GDScript', 'Educational Games', 'Physics Systems'],
+        description: `A physics-forward educational platformer where players switch between water states to solve level puzzles. The project focused on making science concepts playful while keeping controls readable for younger players.`,
+        myRole: 'I led gameplay programming and technical direction. I owned the player-state architecture, puzzle-system implementation, and the team workflow for turning paper design goals into shippable mechanics across a 13-week production cycle.',
+        keyContributions: [
+          'Designed and implemented solid/liquid/gas state switching with puzzle-aware transition rules',
+          'Built player controller, progression logic, and mechanic onboarding across levels',
+          'Scoped and tracked engineering tasks in a weekly Agile/Scrum pipeline',
+          'Collaborated with art, music, and design to integrate content into gameplay systems',
+          'Refined pacing and clarity through elementary school playtest feedback',
         ],
+        technicalHighlights: [
+          'Finite state architecture for water-form transitions',
+          'Data-driven puzzle setup for level scripting',
+          'Gameplay telemetry-informed iteration after live playtests',
+          'Modular controller logic for future mechanic expansion',
+        ],
+        skills: ['Godot 2D', 'GDScript', 'Gameplay Programming', 'System Design', 'Scrum'],
         media: [
-          { type: 'video', src: './videos/fluidity-trailer.mp4', caption: 'Official trailer' },
+          { type: 'youtube', videoId: 'vgPaHUHjU-Q', caption: 'Gameplay trailer' },
+          { type: 'image', src: './images/fluidity1.png', caption: 'Gameplay screenshot' },
+          { type: 'image', src: './images/fluidity2.png', caption: 'Puzzle system screenshot' },
         ],
         links: [
           { label: 'Visit Project Website', url: 'https://fluidity-website.vercel.app/' },
         ],
       },
+    ],
+  },
+  houseofillusions: {
+    title: 'House Of Illusions',
+    windowTitle: 'house-of-illusions-README.md - QuanOS Viewer',
+    barColor: '#2a2a2a',
+    accent: '#f8f4e3',
+    projects: [
       {
         name: 'House Of Illusions',
-        subtitle: 'Fast-paced puzzle platformer — Hackathon Winner',
-        tags: ['Godot 2D', 'GDScript'],
-        description: `House Of Illusion is a fast-paced puzzle platformer built around the duality of reality. The core mechanic allows players to switch between the Real World and the Mirror World, each governed by different movement mechanics and level structure. Progression depends on switching worlds at precisely the right moment — sometimes mid-jump, sometimes mid-fall — to overcome obstacles and complete levels.\n\nHouse Of Illusion was created in 48 hours during the IDEA350: Video Game Development hackathon by Team WaterWorks. The game went on to win the hackathon of the course, which was taught by Professor Christopher Weaver, founder of Bethesda Softworks.`,
-        features: [
-          'Real/Mirror world-switching mechanic',
-          'Precision platforming with dual physics systems',
-          'Built in 48 hours during a game jam',
-          'Won the IDEA350 course hackathon',
+        subtitle: 'Gameplay Programmer | Godot 2D | Hackathon Winner',
+        role: 'Gameplay Programmer',
+        tags: ['Godot 2D', 'GDScript', 'Puzzle Platformer', 'Game Jam'],
+        description: `A fast-paced puzzle platformer built around switching between a Real World and a Mirror World with different traversal rules. Progress depends on precise mid-air transitions and timing under pressure.`,
+        myRole: 'I focused on implementing the dual-world gameplay loop and making the swap mechanic feel responsive enough for speed-platforming. I also helped tune level beats for readability within a 48-hour jam scope.',
+        keyContributions: [
+          'Implemented real-world/mirror-world switching logic tied to movement physics',
+          'Prototyped traversal interactions that force decision-making during jumps and falls',
+          'Balanced difficulty and pacing for short-session replayability',
+          'Delivered a polished jam build within a strict 48-hour production window',
         ],
+        technicalHighlights: [
+          'Dual-physics state transitions',
+          'Checkpoint and restart flow optimized for rapid retries',
+          'Compact scene architecture for jam-time iteration speed',
+          'Mechanic-first level scripting in Godot',
+        ],
+        skills: ['Godot 2D', 'GDScript', 'Gameplay Programming', 'Rapid Prototyping', 'Level Iteration'],
         media: [
-          { type: 'video', src: './videos/game_reel.mov', caption: 'Gameplay trailer' },
+          { type: 'youtube', videoId: '0NA3VAn1G3o', caption: 'Gameplay trailer' },
+          { type: 'image', src: './images/house1.png', caption: 'Mirror world screenshot' },
+          { type: 'image', src: './images/house2.png', caption: 'Level progression screenshot' },
         ],
         links: [
           { label: 'Play on Itch.io', url: 'https://hmyam6090-lab.itch.io/' },
         ],
       },
+    ],
+  },
+  bytediep: {
+    title: 'BYTEDIEP',
+    windowTitle: 'bytediep-README.md - QuanOS Viewer',
+    barColor: '#101418',
+    accent: '#8aff52',
+    projects: [
       {
         name: 'BYTEDIEP: A BYTEPATH Variation',
-        subtitle: 'Replayable arcade shooter — In Progress',
-        tags: ['Lua', 'LOVE2D'],
-        description: `A variation of BYTEPATH: a replayable arcade shooter with a focus on build theorycrafting. This remake focuses more on the diversification of ship classes, inspired by diep.io.`,
-        features: [
-          'Diversified ship class system',
-          'Build theorycrafting focus',
-          'Diep.io–inspired class trees',
-          'Replayable arcade loop',
+        subtitle: 'Gameplay Programmer | LOVE2D | In Progress',
+        role: 'Gameplay Programmer',
+        tags: ['Lua', 'LOVE2D', 'Arcade Shooter', 'Systems Design'],
+        description: `A class-based arcade shooter inspired by BYTEPATH and diep.io, focused on highly replayable runs and player-driven build theorycrafting through differentiated ship archetypes.`,
+        myRole: 'I am designing and implementing the combat sandbox, including class progression, stat interactions, and run-to-run variability that supports experimentation rather than a single optimal build.',
+        keyContributions: [
+          'Implemented modular ship class progression and branching playstyles',
+          'Built combat tuning loops around movement, firing cadence, and survivability',
+          'Developed systems for replayability and progression readability',
+          'Maintained architecture for adding new classes without refactoring core combat',
         ],
+        technicalHighlights: [
+          'Data-driven class and stat definition tables',
+          'Reusable weapon and behavior component patterns in Lua',
+          'Difficulty scaling hooks for longer sessions',
+          'Separation of render, simulation, and input layers',
+        ],
+        skills: ['Lua', 'LOVE2D', 'Gameplay Systems', 'Balancing', 'Data-Driven Design'],
         media: [
-          { type: 'video', src: './videos/bytepath_gameplay.mov', caption: 'Demo Gameplay' },
-          { type: 'video', src: './videos/bytepath.mov', caption: 'Movement Prototype' },
+          { type: 'gif', src: './images/gameplay_bytediep.gif', caption: 'Gameplay gif' },
+          { type: 'image', src: './images/gameover_bytediep.png', caption: 'Game over screenshot' },
         ],
-        links: [{ label: 'Check out on GitHub!', url: 'https://github.com/hmyam6090-lab/BYTEDIEP---BYTEPATH-VARIATION' },],
+        links: [
+          { label: 'Check out on GitHub', url: 'https://github.com/hmyam6090-lab/BYTEDIEP---BYTEPATH-VARIATION' },
+        ],
       },
+    ],
+  },
+  beyondcooked: {
+    title: 'Beyond Cooked',
+    windowTitle: 'beyond-cooked-README.md - QuanOS Viewer',
+    barColor: '#231233',
+    accent: '#ffb347',
+    projects: [
       {
         name: 'Beyond Cooked',
-        subtitle: 'Chaotic co-op cooking game in space',
-        tags: ['Godot 3D', 'GDScript'],
-        description: `Beyond Cooked is a chaotic co-op cooking game in different dimensions. Players must prepare dishes under extreme conditions: zero gravity, possessed appliances, and rogue ingredients that fight back. Success requires communication (hopefully proximity chat).\n\nPlayers land on a different planet each level, they have their kitchen and they need to venture out (similar to Lethal Company) to gather ingredients or tools and cook it in their kitchen to satisfy their galactic customers.`,
-        features: [
-          'Goofy cooking mechanics',
-          'Cooking simulator-ish gameplay with a mix of Lethal Company',
-          'Randomized Recipes per level',
-          'Lethal Company–inspired scavenging loop',
+        subtitle: 'Gameplay Programmer | Godot 3D | Co-op Prototype',
+        role: 'Gameplay Programmer',
+        tags: ['Godot 3D', 'GDScript', 'Co-op Design', 'Systems Prototyping'],
+        description: `A chaotic co-op cooking game set across dangerous dimensions. Teams gather ingredients in hostile environments and return to the kitchen to complete randomized orders under pressure.`,
+        myRole: 'I built the gameplay loop from ingredient retrieval to recipe completion, with emphasis on cooperative chaos and readable task handoffs between players.',
+        keyContributions: [
+          'Implemented recipe and order-flow systems for dynamic level pacing',
+          'Built pickup/use interactions for ingredients and kitchen tools',
+          'Designed traversal-to-cooking loop inspired by high-risk scavenging games',
+          'Integrated and tuned prototype content for short co-op sessions',
         ],
+        technicalHighlights: [
+          'Rule-based recipe validation and completion states',
+          'Data tables for level recipes and spawnable resources',
+          'Event-driven interaction architecture for tools and appliances',
+          'Co-op-oriented gameplay feedback loops',
+        ],
+        skills: ['Godot 3D', 'GDScript', 'Gameplay Loop Design', 'UI Feedback', 'Rapid Iteration'],
         media: [
-          { type: 'image', src: './images/beyond-cooked-1.png', caption: 'Home Screen' },
-          { type: 'image', src: './images/beyond-cooked-2.png', caption: 'Tutorial' },
-        ],
-        links: [{ label: 'Source Code On GitHub', url: 'https://github.com/hmyam6090-lab/Beyond-Cooked' },],
-      },
-      {
-        name: 'Solo Independent Game Development',
-        subtitle: 'Published games & prototypes',
-        tags: ['Godot', 'Unity', 'Processing', 'Scratch'],
-        description: `Published 5 playable games/prototypes on Itch.io and additional projects on UGC platforms, including "Flappy Bird as a Volume Control", "Untitled Snowball Game", and more.\n\nExperienced in rapid prototyping, playtesting, debugging, and technical documentation across multiple engines (Godot, Unity, Processing, Scratch).`,
-        features: [
-          '5+ published games on Itch.io',
-          'Projects on UGC platforms',
-          'Rapid prototyping across multiple engines',
-          'Playtesting & technical documentation',
-        ],
-        media: [
-          { type: 'image', src: './images/indie-games-1.gif', caption: 'Flappy Bird as a Volume Control' },
-          { type: 'image', src: './images/indie-games-2.gif', caption: 'Untitled Snowball Game' },
+          { type: 'image', src: './images/beyond-cooked-1.png', caption: 'Kitchen gameplay screenshot' },
+          { type: 'image', src: './images/beyond-cooked-2.png', caption: 'Planet scavenging screenshot' },
         ],
         links: [
-          { label: 'Itch.io Profile', url: 'https://hmyam6090-lab.itch.io/' },
+          { label: 'Source Code on GitHub', url: 'https://github.com/hmyam6090-lab/Beyond-Cooked' },
         ],
       },
     ],
   },
-  webdev: {
-    title: 'Software & Web Development',
-    windowTitle: 'web-dev-README.md — QuanOS Viewer',
-    barColor: '#2a2a2a',
-    accent: '#4A90D9',
+  trustme: {
+    title: 'Trust Me, I Was There!',
+    windowTitle: 'trust-me-i-was-there-README.md - QuanOS Viewer',
+    barColor: '#f4efe4',
+    accent: '#1b1b1b',
+    lightTheme: true,
     projects: [
       {
-        name: 'This Portfolio Site',
-        subtitle: 'OS-themed creative portfolio — React + Vite',
-        tags: ['React', 'CSS3', 'Vite', 'Canvas API'],
-        description: `This very site! A QuanOS-inspired portfolio with draggable icons, perspective tilt, interactive terminal, kernel boot animation, and a full showcase section with deep-dive project READMEs.\n\nBuilt from scratch with React 19 and Vite, featuring custom window management, sound effects, CSS-driven animations, and a particle system.`,
-        features: [
-          'Draggable desktop icons with parallax',
-          'Interactive terminal with custom commands',
-          'Minigames: Minesweeper, Snake, Paint',
-          'Kernel boot animation & login screen',
+        name: 'Trust Me, I Was There!',
+        subtitle: 'Lead Gameplay Programmer & Producer | Godot 4 | Team Project (Game Jam / Internship)',
+        role: 'Lead Gameplay Programmer & Producer',
+        tags: ['Godot 4', 'GDScript', 'Narrative Deduction', 'Puzzle Systems'],
+        description: `A narrative deduction game where players act as the editor of a summer camp newspaper. NPCs submit conflicting witness reports, photographs, and physical evidence, and the player cross-references information to reconstruct the most plausible version of events before publishing the next day\'s paper.`,
+        myRole: 'As the gameplay programmer, I was responsible for designing and implementing the game\'s core deduction systems and player interaction loop.',
+        keyContributions: [
+          'Architected the evidence system supporting witness testimonies, photographs, and physical objects',
+          'Developed cross-referencing mechanics for comparing conflicting details across evidence sources',
+          'Built the interactive evidence board with draggable cards, grouping mechanics, and support/conflict relationships',
+          'Implemented newspaper drafting workflow for building headlines and articles from verified evidence',
+          'Created scoring that evaluates consistency against the underlying true event instead of binary right/wrong answers',
+          'Programmed day progression, package delivery, and full loop from investigation to publication',
+          'Collaborated with artists and designers to turn paper prototypes into interactive systems',
         ],
+        technicalHighlights: [
+          'Data-driven evidence architecture',
+          'Drag-and-drop UI interactions',
+          'State management for branching investigations',
+          'Rule-based evidence validation',
+          'Modular systems for adding new stories and evidence packages',
+        ],
+        skills: ['Godot 4', 'GDScript', 'Gameplay Programming', 'UI Programming', 'System Architecture', 'Puzzle Game Design', 'Data-Driven Development'],
         media: [
-          { type: 'image', src: './images/portfolio-screenshot.png', caption: 'Desktop view' },
+          { type: 'youtube', videoId: 'SXn_OBy1RS4', caption: 'Gameplay video' },
+          { type: 'image', src: './images/tmiwt1.png', caption: 'Evidence board screenshot' },
+          { type: 'image', src: './images/tmiwt2.png', caption: 'Newspaper drafting screenshot' },
         ],
-        links: [
-          { label: 'Source Code', url: 'https://github.com/hmyam6090-lab' },
-        ],
-      },
-      {
-        name: 'Vbee Internal Testing Platform',
-        subtitle: 'Full-stack manual testing platform for TTS models',
-        tags: ['React', 'Vite', 'Google Firestore', 'Firebase'],
-        description: `Built an internal web platform using React & Vite enabling 20+ human evaluators to rate synthesized outputs and collect structured feedback (via MOS test and Transcription Test). Deployed using Google Firebase.`,
-        features: [
-          'MOS & Transcription Test evaluation tools',
-          '20+ concurrent human evaluators',
-          'Structured feedback collection pipeline',
-          'Firebase authentication & Firestore backend',
-        ],
-        media: [
-          { type: 'image', src: './images/testing-page.png', caption: 'Testing interface' },
-          { type: 'image', src: './images/webapp-screenshot.png', caption: 'Dashboard' },
-        ],
-        links: [
-        ],
-      },
-      {
-        name: 'Three.js Portal Render Demonstration',
-        subtitle: '3D portal scene with baked lighting',
-        tags: ['Three.js', 'WebGL', 'Blender', 'Vite'],
-        description: `Created a beautiful 3D portal scene using Blender and rendered using baking technique to get the best looking lights and shadows. A demo built as part of a course to learn how to develop beautiful 3D web experiences using Three.js.`,
-        features: [
-          'Blender-modeled 3D scene',
-          'Baked lighting for realistic shadows',
-          'Interactive WebGL rendering',
-          'Optimized for web performance',
-        ],
-        media: [
-          { type: 'video', src: './videos/portal.mov', caption: 'Portal scene demo' },
-        ],
-        links: [
-          { label: 'Live Demo', url: 'https://hmyam6090-lab.github.io/portal-scene-threejs/' },
-        ],
-      },
-      {
-        name: 'STG — Smart Tour Guide Mobile App',
-        subtitle: 'Award-winning Flutter-based tour guide',
-        tags: ['Flutter', 'Dart', 'BLE', 'AI'],
-        description: `Developed and released an award-winning Flutter-based mobile application integrating BLE and AI for multilingual, location-based guidance.\n\nPerformed extensive manual testing on Android devices and emulators, validating UI/UX consistency, BLE stability, performance under varying network conditions, and edge-case user flows.\n\nConducted localization testing across multiple languages to ensure accurate rendering and seamless language switching.\n\nPublished on Google Play Store and officially approved with documentation by Vietnamese government authorities for experimental deployment at a national relic area.`,
-        features: [
-          'BLE + AI multilingual guidance',
-          'Extensive Android manual testing',
-          'Localization testing across languages',
-          'Published on Google Play Store',
-          'Approved by Vietnamese government for national relic deployment',
-        ],
-        media: [
-          { type: 'image', src: './images/stg-1.jpg', caption: 'Map Interface' },
-          { type: 'image', src: './images/stg-2.jpg', caption: 'Hardware Installed Onsite' },
-          { type: 'image', src: './images/stg-3.jpg', caption: 'Main Menu' },
-          { type: 'image', src: './images/stg-4.jpg', caption: 'Multilingual support' },
-        ],
-        links: [
-          { label: 'News Article', url: 'https://e.vnexpress.net/news/news/education/ai-tour-guide-invention-lands-vietnamese-student-400-000-scholarship-at-us-top-liberal-arts-university-4869263.html' },
-        ],
-      },
-    ],
-  },
-  creative: {
-    title: 'Creative Coding',
-    windowTitle: 'creative-README.md — QuanOS Viewer',
-    barColor: '#1a1a1a',
-    accent: '#AB47BC',
-    projects: [
-      {
-        name: 'Creative Coding Sketches',
-        subtitle: 'Interactive visual experiments with code',
-        tags: ['Processing', 'Lua', 'p5.js', 'OpenCV'],
-        description: `Actively making creative coding sketches using Processing, Lua, and p5.js. Examples include an OpenCV musical instrument that responds to the player's hand using a webcam, a remake of a Plant vs Zombies level from scratch in Processing, 3D voxel-inspired drawing apps, audio visualizers, and more.`,
-        features: [
-          'OpenCV musical instrument (webcam-driven)',
-          'Plant vs Zombies level remake in Processing',
-          '3D voxel-inspired drawing app',
-          'Audio visualizers & generative art',
-        ],
-        media: [
-          { type: 'video', src: './videos/pvz.mov', caption: 'PvZ remake' },
-          { type: 'video', src: './videos/creative_reel.mov', caption: 'Voxel drawing app' },
-          { type: 'image', src: './images/candlepomo.png', caption: 'Candle Pomodoro' },
-          { type: 'image', src: './images/breaking-bad.png', caption: 'Breaking Bad Poster' },
-        ],
-        links: [
-          { label: 'GitHub Profile', url: 'https://github.com/hmyam6090-lab' },
-        ],
-      },
-    ],
-  },
-  research: {
-    title: 'Research & Contributing',
-    windowTitle: 'research-README.md — QuanOS Viewer',
-    barColor: '#f8f6f2',
-    accent: '#4A90D9',
-    projects: [
-      {
-        name: 'Open Source Contributions',
-        subtitle: 'Active contributor to creative coding libraries',
-        tags: ['Lua', 'Python', 'JavaScript', 'Processing', 'C++', 'Arduino IDE'],
-        description: `Active contributor to creative coding libraries like L5 and various game libraries. Contributions include bug fixes, feature additions, and documentation improvements.`,
-        features: [
-          'Bug fixes and feature PRs',
-          'Documentation improvements',
-          'Community engagement and code reviews',
-        ],
-        media: [
-          { type: 'image', src: './images/404custom.png', caption: 'Contributed custom 404 page to L5 Library' },
-        ],
-        links: [
-          { label: 'GitHub Profile', url: 'https://github.com/hmyam6090-lab' },
-        ],
-      },
-      {
-        name: 'Wesleyan Soft Robotics Lab',
-        subtitle: 'Capacitive sensing & wearable sensor research',
-        tags: ['ROS', 'Python', 'C++', 'Arduino IDE', 'Hardware'],
-        description: `Fabricated capacitive sensing sleeves by constructing elastic conductive tubes and soldering FDC1004 capacitance-to-digital converter chips for high-resolution charge measurement.\n\nTesting wearable sensor hardware integrating conductive materials for stretch-based capacitive sensing applications.`,
-        features: [
-          'Capacitive sensing sleeve fabrication',
-          'FDC1004 chip soldering & integration',
-          'Wearable stretch-based sensing applications',
-          'ROS system integration',
-        ],
-        media: [
-          { type: 'image', src: './images/finished_FDC.jpg', caption: 'Soldered FDC1004 chip' },
-        ],
-        links: [
-          { label: 'Lab GitHub', url: 'https://github.com/Wesleyan-Soft-Robots-Lab' },
-        ],
-      },
-      {
-        name: 'McKenzie-Smith Lab — Modular NAPS',
-        subtitle: 'Python package for entomological data analysis',
-        tags: ['Python'],
-        description: `Architecting a Python package for readability and reproducibility, targeting scientific users with limited Python experience; planned public release on PyPI alongside a forthcoming publication.\n\nRe-designing re-identification pipeline combining fiducial tracking, AI-based locomotion models, and image-based classifiers to resolve identity swaps during occlusion events (ArUco & SLEAP).`,
-        features: [
-          'PyPI-ready Python package architecture',
-          'Fiducial tracking with ArUco markers',
-          'AI-based locomotion models (SLEAP)',
-          'Image-based classifier for re-identification',
-          'Reproducible pipeline for non-expert users',
-        ],
-        media: [
-          { type: 'image', src: './images/insects.gif', caption: 'Insect tracking in action' },
-        ],
-        links: [
-          { label: 'GitHub Repo', url: 'https://github.com/Wesleyan-Soft-Robots-Lab/Modular-NAPS' },
-        ],
+        links: [],
       },
     ],
   },
@@ -313,7 +218,7 @@ const ProjectDetailModal = ({ sectionId, onClose }) => {
 
   if (!section) return null;
 
-  const isLight = sectionId === 'research';
+  const isLight = Boolean(section.lightTheme);
 
   return (
     <div className={`pdm-overlay ${isExiting ? 'pdm-exiting' : ''}`} onClick={handleBackdropClick}>
@@ -366,18 +271,58 @@ const ProjectDetailModal = ({ sectionId, onClose }) => {
                 ))}
               </div>
 
-              {/* Features */}
-              {project.features.length > 0 && (
+              {project.role && (
+                <div className="pdm-my-role">
+                  <h3 className="pdm-features-title">Role</h3>
+                  <p>{project.role}</p>
+                </div>
+              )}
+
+              {project.myRole && (
+                <div className="pdm-my-role">
+                  <h3 className="pdm-features-title">My Role</h3>
+                  <p>{project.myRole}</p>
+                </div>
+              )}
+
+              {project.keyContributions?.length > 0 && (
                 <div className="pdm-features">
-                  <h3 className="pdm-features-title">Key Features</h3>
+                  <h3 className="pdm-features-title">Key Contributions</h3>
                   <ul>
-                    {project.features.map((f, i) => (
+                    {project.keyContributions.map((item, i) => (
                       <li key={i}>
                         <span className="pdm-feat-bullet" style={{ color: section.accent }}>▸</span>
-                        {f}
+                        {item}
                       </li>
                     ))}
                   </ul>
+                </div>
+              )}
+
+              {project.technicalHighlights?.length > 0 && (
+                <div className="pdm-tech-highlights">
+                  <h3 className="pdm-features-title">Technical Highlights</h3>
+                  <ul>
+                    {project.technicalHighlights.map((item, i) => (
+                      <li key={i}>
+                        <span className="pdm-feat-bullet" style={{ color: section.accent }}>▸</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {project.skills?.length > 0 && (
+                <div className="pdm-skills-block">
+                  <h3 className="pdm-features-title">Skills</h3>
+                  <div className="pdm-skills-row">
+                    {project.skills.map((skill) => (
+                      <span key={skill} className="pdm-tag" style={{ borderColor: section.accent, color: section.accent }}>
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               )}
 
@@ -386,7 +331,18 @@ const ProjectDetailModal = ({ sectionId, onClose }) => {
                 <div className="pdm-media">
                   {project.media.map((m, i) => (
                     <div key={i} className="pdm-media-item">
-                      {(m.type === 'image' || m.type === 'gif' || /\.(gif|png|jpe?g|webp|bmp|svg)$/i.test(m.src)) ? (
+                      {m.type === 'youtube' ? (
+                        <div className="pdm-youtube-wrap">
+                          <iframe
+                            className="pdm-youtube-embed"
+                            src={`https://www.youtube.com/embed/${m.videoId}`}
+                            title={m.caption}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen
+                          />
+                        </div>
+                      ) : (m.type === 'image' || m.type === 'gif' || /\.(gif|png|jpe?g|webp|bmp|svg)$/i.test(m.src)) ? (
                         <img src={m.src} alt={m.caption} className="pdm-media-img" />
                       ) : (
                         <video
