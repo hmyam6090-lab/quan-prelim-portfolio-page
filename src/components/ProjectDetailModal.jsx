@@ -162,9 +162,9 @@ const sectionContent = {
     projects: [
       {
         name: 'Trust Me, I Was There!',
-        subtitle: 'Lead Gameplay Programmer & Producer | Godot 4 | Team Project (Game Jam / Internship)',
+        subtitle: 'Lead Gameplay Programmer & Producer | Unity | Team Project (Game Jam)',
         role: 'Lead Gameplay Programmer & Producer',
-        tags: ['Godot 4', 'GDScript', 'Narrative Deduction', 'Puzzle Systems'],
+        tags: ['Unity', 'C#', 'Narrative Deduction', 'Puzzle Systems'],
         description: `A narrative deduction game where players act as the editor of a summer camp newspaper. NPCs submit conflicting witness reports, photographs, and physical evidence, and the player cross-references information to reconstruct the most plausible version of events before publishing the next day\'s paper.\n\nBuilt for Summer Comfy Jam 2026, the project ranked 75th out of approximately 450 submissions.`,
         myRole: 'As the gameplay programmer, I was responsible for designing and implementing the game\'s core deduction systems and player interaction loop.',
         keyContributions: [
@@ -174,7 +174,7 @@ const sectionContent = {
           'Implemented newspaper drafting workflow for building headlines and articles from verified evidence',
           'Created scoring that evaluates consistency against the underlying true event instead of binary right/wrong answers',
           'Programmed day progression, package delivery, and full loop from investigation to publication',
-          'Collaborated with artists and designers to turn paper prototypes into interactive systems',
+          'Led development for team of 3 (artist, designer, programmer), including task delegation, code reviews, and sprint planning',
         ],
         technicalHighlights: [
           'Data-driven evidence architecture',
@@ -183,7 +183,7 @@ const sectionContent = {
           'Rule-based evidence validation',
           'Modular systems for adding new stories and evidence packages',
         ],
-        skills: ['Godot 4', 'GDScript', 'Gameplay Programming', 'UI Programming', 'System Architecture', 'Puzzle Game Design', 'Data-Driven Development'],
+        skills: ['Unity', 'C#', 'Gameplay Programming', 'UI Programming', 'System Architecture', 'Puzzle Game Design', 'Data-Driven Development'],
         media: [
           { type: 'youtube', videoId: 'SXn_OBy1RS4', caption: 'Gameplay video' },
           { type: 'image', src: './images/tmiwt1.png', caption: 'Evidence board screenshot' },
