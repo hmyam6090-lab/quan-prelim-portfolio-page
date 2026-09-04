@@ -195,6 +195,47 @@ const sectionContent = {
       },
     ],
   },
+  fantasyworld: {
+    title: 'It Takes Time',
+    windowTitle: 'it-takes-time-README.md - QuanOS Viewer',
+    barColor: '#51327e',
+    accent: '#c4b5fd',
+    projects: [
+      {
+        name: 'Fantasy World',
+        subtitle: 'Lead Programmer | Unity/C# | IndieCade Climate Jam 2026',
+        role: 'Lead Programmer',
+        tags: ['Unity', 'C#', 'Puzzle Game', 'Agile Development', 'Climate Solutions'],
+        description: `A charming click-based puzzle game inspired by the classic GROW series by On (EYEZMAZE). Your goal is simple: plant a seed, nurture the world, and discover the perfect order of actions to make everything grow.\n\nUnderneath its cute and colorful presentation, It Takes Time explores the idea of "Plant a Seed" — how small actions can grow into something much bigger. The game encourages players to think about growing and nurturing nature, creating sustainable environments, dealing with pollution, understanding environmental problems, and how different parts of an ecosystem depend on one another.\n\nThe game features two levels: Level 1 starts with a small, seemingly lifeless planet where you plant your seed and discover combinations needed to help nature flourish. Level 2 shifts focus to caring for a tiny seed, using the right items at the right time to help it take root, sprout, and grow into a mighty tree.`,
+        myRole: 'I led programming across a 5-person Agile team, implementing core gameplay systems including UI, puzzle mechanics, save/load, and game management in C#/Unity over 4 sprints.',
+        keyContributions: [
+          'Led programming team of 5 in Agile development with 4 sprints',
+          'Implemented core gameplay systems: UI, puzzle mechanics, save/load, and game management',
+          'Built custom tooling for asset integration and imports',
+          'Reduced asset import time by 35% and build size by 50%',
+          'Shipped the climate-focused game for IndieCade\'s Climate Solutions Anthology Bundle on Steam',
+          'Collaborated with cross-functional team including director, artists, and composer',
+        ],
+        technicalHighlights: [
+          'Custom asset pipeline tooling for optimized imports',
+          'Save/load system for puzzle state persistence',
+          'Modular puzzle mechanics supporting multiple growth stages',
+          'Build optimization reducing final package size by 50%',
+          'Agile sprint planning and task management',
+        ],
+        skills: ['Unity', 'C#', 'Gameplay Programming', 'UI Systems', 'Tool Development', 'Build Optimization', 'Agile/Scrum', 'Team Leadership'],
+        media: [
+          { type: 'youtube', videoId: '_3gCvnpxCnM', caption: 'Gameplay trailer' },
+          { type: 'image', src: './images/it-takes-times-1.png', caption: 'Gameplay screenshot' },
+          { type: 'image', src: './images/it-takes-times-2.jpg', caption: 'Level progression screenshot' },
+        ],
+        links: [
+          { label: 'Play on Itch.io', url: 'https://gaodiaojiaomi-m.itch.io/fantasy-world' },
+          { label: 'IndieCade Climate Jam 2026', url: 'https://itch.io/jam/indiecade-2026-climate-jam' },
+        ],
+      },
+    ],
+  },
 };
 
 /* ═══════════════════════════════════════ */
