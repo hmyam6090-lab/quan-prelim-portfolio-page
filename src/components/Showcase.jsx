@@ -4,8 +4,26 @@ import './Showcase.css';
 
 const projectSections = [
   {
-    id: 'fluidity',
+    id: 'fantasyworld',
     index: '01',
+    label: 'It Takes Time',
+    title: 'Fantasy World',
+    subtitle: 'Climate-focused puzzle game • Lead Programmer',
+    desc: 'A click-based puzzle game inspired by GROW series. Plant seeds, nurture worlds, and discover the perfect order to make everything grow. Built for IndieCade Climate Jam 2026.',
+    tags: ['Unity', 'C#', 'Puzzle Game', 'Climate Solutions'],
+    media: { type: 'youtube', youtubeId: '_3gCvnpxCnM' },
+    externalUrl: 'https://gaodiaojiaomi-m.itch.io/fantasy-world',
+    externalLabel: 'Itch.io Page',
+    photos: [
+      { src: './images/it-takes-times-1.png', alt: 'Fantasy World screenshot 1' },
+      { src: './images/it-takes-times-2.jpg', alt: 'Fantasy World screenshot 2' },
+    ],
+    buttonClass: 'fantasy-btn',
+    rowClass: 'fantasy-row',
+  },
+  {
+    id: 'fluidity',
+    index: '02',
     label: 'Fluidity',
     title: 'Fluidity',
     subtitle: 'Softbody Physics-based educational platformer • Lead Gameplay Programmer',
@@ -23,7 +41,7 @@ const projectSections = [
   },
   {
     id: 'trustme',
-    index: '02',
+    index: '03',
     label: 'Trust Me, I Was There!',
     title: 'Trust Me, I Was There!',
     subtitle: 'Narrative deduction game about evidence and truth • Lead Gameplay Programmer & Producer',
@@ -42,7 +60,7 @@ const projectSections = [
   },
   {
     id: 'houseofillusions',
-    index: '03',
+    index: '04',
     label: 'House Of Illusions',
     title: 'House Of Illusions',
     subtitle: 'Dual-reality puzzle platformer built in 48 hours • Gameplay Programmer',
@@ -60,7 +78,7 @@ const projectSections = [
   },
   {
     id: 'bytediep',
-    index: '04',
+    index: '05',
     label: 'BYTEDIEP',
     title: 'BYTEDIEP',
     subtitle: 'Replayable class-based arcade shooter • Gameplay Programmer',
@@ -78,7 +96,7 @@ const projectSections = [
   },
   {
     id: 'beyondcooked',
-    index: '05',
+    index: '06',
     label: 'Beyond Cooked',
     title: 'Beyond Cooked',
     subtitle: 'Chaotic co-op cooking in hostile dimensions • Gameplay Programmer',
