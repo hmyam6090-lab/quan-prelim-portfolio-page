@@ -2,16 +2,16 @@ import useTypewriter from '../hooks/useTypewriter';
 import './Content.css';
 
 const AboutContent = () => {
-  const typedSubtitle = useTypewriter('Game Dev + Creative Coder trying to make cool stuff', 40, 300);
+  const typedSubtitle = useTypewriter('Gameplay Programmer specializing in interactive systems', 40, 300);
 
   const highlights = [
-    { label: 'React', category: 'Web Dev' },
-    { label: 'Godot', category: 'Game Dev' },
-    { label: 'Unity', category: 'Game Dev' },
-    { label: 'Love2D', category: 'Game Dev' },
-    { label: 'Processing', category: 'Creative Coding' },
-    { label: 'Figma', category: 'Design' },
-    { label: 'Flutter', category: 'Mobile Dev' },
+    { label: 'Unity', category: 'Gameplay Systems' },
+    { label: 'C#', category: 'Programming' },
+    { label: 'Godot', category: 'Game Engines' },
+    { label: 'GDScript', category: 'Programming' },
+    { label: 'Lua', category: 'Programming' },
+    { label: 'LOVE2D', category: 'Game Engines' },
+    { label: 'Agile/Scrum', category: 'Development' },
   ];
 
   return (
@@ -36,11 +36,11 @@ const AboutContent = () => {
       <div className="about-body">
         <div className="about-text">
           <p>
-            I'm a game developer and creative coder with a passion for crafting engaging interactive experiences. I love exploring the intersection of technology and creativity, and I'm always eager to learn new tools and techniques to bring my ideas to life.
+            I'm a gameplay programmer passionate about building interactive systems that create meaningful player experiences. I specialize in implementing core mechanics, puzzle systems, and game loops across Unity and Godot, with experience leading development teams in Agile environments.
           </p>
           <p>
-            My work spans React, Godot, Unity, and more, with projects ranging from web apps to experimental games. I'm currently focused on honing my game development skills and building a portfolio of fun, innovative projects. When I'm not coding, you can find me sketching game concepts, playing around with generative art, or diving into the latest game design trends.
-          </p>  
+            My recent work includes leading programming on a 5-person team for IndieCade's Climate Jam 2026, where I built custom tooling that reduced asset import time by 35% and build size by 50%. I've shipped multiple games ranging from educational platformers with physics-based state switching to narrative deduction games with complex evidence systems. I thrive on turning design concepts into shippable mechanics through clean architecture and iterative development.
+          </p>
         </div>
 
         <div className="about-highlights">
@@ -56,6 +56,7 @@ const AboutContent = () => {
         </div>
 
         <div className="about-links">
+          <a href="./images/Quan_Hoang_Resume_Aug28.pdf" target="_blank" rel="noopener noreferrer" className="about-link">Resume</a>
           <a href="mailto:hmyam6090@gmail.com" className="about-link">Email</a>
           <a href="https://github.com/hmyam6090-lab" target="_blank" rel="noopener noreferrer" className="about-link">GitHub</a>
           <a href="https://www.linkedin.com/in/qu%C3%A2n-m-ho%C3%A0ng-251160383/" target="_blank" rel="noopener noreferrer" className="about-link">LinkedIn</a>

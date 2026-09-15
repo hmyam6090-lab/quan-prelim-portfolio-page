@@ -17,14 +17,20 @@
 .type-caret {
   display: inline-block;
   margin-left: 2px;
-  color: #4A90D9;
+  color: #4a90d9;
   animation: blinkCaret 900ms steps(1) infinite;
   font-weight: 300;
 }
 
 @keyframes blinkCaret {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
 }
 
 /* ────────────────────────────────────────
@@ -51,7 +57,7 @@
   height: 220px;
   border-radius: 8px;
   object-fit: cover;
-  border: 3px solid #4A90D9;
+  border: 3px solid #4a90d9;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -72,7 +78,7 @@
 }
 
 .name-hi {
-  font-family: 'Playfair Display', 'DM Serif Display', serif;
+  font-family: "Playfair Display", "DM Serif Display", serif;
   font-style: italic;
   font-weight: 400;
   font-size: 18px;
@@ -85,7 +91,7 @@
 }
 
 .name-serif {
-  font-family: 'Playfair Display', 'DM Serif Display', serif;
+  font-family: "Playfair Display", "DM Serif Display", serif;
   font-weight: 900;
   font-size: 64px;
   color: #1a1a1a;
@@ -94,7 +100,7 @@
 }
 
 .about-subtitle {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #888;
@@ -113,7 +119,7 @@
 }
 
 .about-text p {
-  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-family: "Space Grotesk", "Inter", sans-serif;
   font-size: 14px;
   line-height: 1.7;
   color: #555;
@@ -121,7 +127,7 @@
 }
 
 .highlights-title {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
@@ -144,7 +150,7 @@
   background: #f6f6f6;
   border: 1px solid #eee;
   border-radius: 6px;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 12px;
   font-weight: 500;
   color: #444;
@@ -162,7 +168,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #4A90D9;
+  color: #4a90d9;
   background: rgba(74, 144, 217, 0.08);
   padding: 2px 5px;
   border-radius: 3px;
@@ -174,19 +180,19 @@
 }
 
 .about-link {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 12px;
   font-weight: 600;
-  color: #4A90D9;
+  color: #4a90d9;
   text-decoration: none;
   padding: 8px 18px;
-  border: 1.5px solid #4A90D9;
+  border: 1.5px solid #4a90d9;
   border-radius: 6px;
   transition: all 0.2s;
 }
 
 .about-link:hover {
-  background: #4A90D9;
+  background: #4a90d9;
   color: white;
 }
 
@@ -214,7 +220,7 @@
 }
 
 .projects-title-serif {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 900;
   font-size: 32px;
   color: #1a1a1a;
@@ -222,7 +228,7 @@
 }
 
 .projects-title-sans {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 300;
   font-size: 32px;
   color: #999;
@@ -237,7 +243,7 @@
   border: none;
   background: transparent;
   padding: 6px 14px;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 12px;
   font-weight: 500;
   color: #999;
@@ -252,7 +258,7 @@
 }
 
 .filter-btn.active {
-  color: #4A90D9;
+  color: #4a90d9;
   background: #f0f6ff;
   font-weight: 600;
 }
@@ -296,10 +302,14 @@
 }
 
 .project-thumb-new::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 30% 40%, rgba(74, 144, 217, 0.08), transparent 60%);
+  background: radial-gradient(
+    circle at 30% 40%,
+    rgba(74, 144, 217, 0.08),
+    transparent 60%
+  );
 }
 
 .project-overlay {
@@ -318,7 +328,7 @@
 }
 
 .project-view {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 12px;
   font-weight: 600;
   color: white;
@@ -333,7 +343,7 @@
 }
 
 .project-details h3 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 16px;
   font-weight: 700;
   color: #1a1a1a;
@@ -341,7 +351,7 @@
 }
 
 .project-details p {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 12px;
   color: #888;
   line-height: 1.5;
@@ -355,7 +365,7 @@
 }
 
 .project-tag {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 10px;
   font-weight: 600;
   padding: 4px 10px;
@@ -374,6 +384,21 @@
   min-height: 480px;
 }
 
+.pdf-preview-container {
+  width: 100%;
+  height: calc(100vh - 100px);
+  min-height: 800px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pdf-preview-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 .skills-header {
   margin-bottom: 28px;
   padding-bottom: 16px;
@@ -387,7 +412,7 @@
 }
 
 .skills-title-serif {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 900;
   font-size: 32px;
   color: #1a1a1a;
@@ -395,7 +420,7 @@
 }
 
 .skills-title-sans {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 300;
   font-size: 32px;
   color: #999;
@@ -429,11 +454,11 @@
 
 .skill-icon {
   font-size: 16px;
-  color: #4A90D9;
+  color: #4a90d9;
 }
 
 .skill-category-header h3 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 14px;
   font-weight: 700;
   color: #1a1a1a;
@@ -446,7 +471,7 @@
 }
 
 .skill-item {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 12px;
   font-weight: 500;
   padding: 6px 12px;
@@ -460,7 +485,7 @@
 .skill-item:hover {
   background: #f0f6ff;
   border-color: #d0e0f5;
-  color: #4A90D9;
+  color: #4a90d9;
 }
 
 /* ────────────────────────────────────────
@@ -485,7 +510,7 @@
 }
 
 .contact-title-serif {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 900;
   font-size: 32px;
   color: #1a1a1a;
@@ -493,14 +518,14 @@
 }
 
 .contact-title-sans {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 300;
   font-size: 32px;
   color: #999;
 }
 
 .contact-subtitle {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 14px;
   color: #888;
   line-height: 1.6;
@@ -526,7 +551,7 @@
 }
 
 .contact-card:hover {
-  border-color: #4A90D9;
+  border-color: #4a90d9;
   background: #f8fbff;
   transform: translateY(-2px);
   box-shadow: 0 4px 16px rgba(74, 144, 217, 0.08);
@@ -545,7 +570,7 @@
 }
 
 .contact-card-info h3 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 13px;
   font-weight: 700;
   color: #1a1a1a;
@@ -553,7 +578,7 @@
 }
 
 .contact-card-info p {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 12px;
   color: #888;
 }
@@ -572,7 +597,7 @@
 }
 
 .gallery-title {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 22px;
   font-weight: 700;
   color: #222;
@@ -580,7 +605,7 @@
 }
 
 .gallery-subtitle {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 13px;
   color: #888;
   margin: 0 0 12px;
@@ -594,7 +619,7 @@
   background: #f0f0f0;
   border: 1px solid #ddd;
   border-radius: 4px;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 11px;
   color: #666;
 }
@@ -617,7 +642,9 @@
   padding: 8px;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition:
+    background 0.2s,
+    transform 0.2s;
 }
 
 .gallery-item:hover {
@@ -658,7 +685,7 @@
 }
 
 .gallery-item-caption {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 10px;
   color: #666;
   text-align: center;
@@ -676,8 +703,12 @@
 }
 
 @keyframes lbFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .lightbox-inner {
@@ -691,8 +722,14 @@
 }
 
 @keyframes lbSlideUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .lightbox-close {
@@ -734,7 +771,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 14px;
   color: #999;
   background: linear-gradient(135deg, #e8ecf0, #d8dee8);
@@ -752,7 +789,7 @@
 }
 
 .lightbox-caption {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 14px;
   color: #444;
   text-align: center;
@@ -767,7 +804,7 @@
 }
 
 .gallery-footer p {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 11px;
   color: #999;
 }
