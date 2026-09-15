@@ -162,7 +162,7 @@ const sectionContent = {
     projects: [
       {
         name: 'Trust Me, I Was There!',
-        subtitle: 'Lead Gameplay Programmer & Producer | Unity | Team Project (Game Jam)',
+        subtitle: 'Lead Gameplay Programmer & Producer | Unity/C# | Team Project (Game Jam)',
         role: 'Lead Gameplay Programmer & Producer',
         tags: ['Unity', 'C#', 'Narrative Deduction', 'Puzzle Systems'],
         description: `A narrative deduction game where players act as the editor of a summer camp newspaper. NPCs submit conflicting witness reports, photographs, and physical evidence, and the player cross-references information to reconstruct the most plausible version of events before publishing the next day\'s paper.\n\nBuilt for Summer Comfy Jam 2026, the project ranked 75th out of approximately 450 submissions.`,
