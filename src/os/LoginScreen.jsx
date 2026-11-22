@@ -39,7 +39,7 @@ export default function LoginScreen({ active }) {
     if (value.replace(/[\s-]/g, '').toLowerCase() === PASSWORD) {
       enter();
     } else {
-      playSound('click');
+      playSound('error');
       setFails((f) => f + 1);
       setShake(true);
       setTimeout(() => setShake(false), 450);

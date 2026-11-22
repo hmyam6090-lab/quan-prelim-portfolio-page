@@ -40,9 +40,19 @@ function makeWin(id, z, offset = 0) {
 }
 
 function Notepad() {
-  const typed = useTypewriter(greeting, 26, 700);
+  const typed = useTypewriter(greeting, 13, 600);
   const [text, setText] = useState(null);
   const done = typed.length >= greeting.length;
+
+  // typewriter clacks: one per visible character (every other one, so it isn't a buzz),
+  // a carriage-return thunk on new lines, and a little bell when the message is done
+  useEffect(() => {
+    const ch = typed[typed.length - 1];
+    if (!ch) return;
+    if (typed.length >= greeting.length) playSound('typeBell');
+    else if (ch === '\n') playSound('typeReturn');
+    else if (ch !== ' ' && typed.length % 2 === 0) playSound('type');
+  }, [typed]);
   return (
     <>
       <div className="np-menu"><span>File</span><span>Edit</span><span>Search</span><span>Help</span></div>
@@ -80,7 +90,6 @@ export default function Desktop() {
   const [active, setActive] = useState('notepad');
   const [selected, setSelected] = useState(null);
 
-  useEffect(() => { playSound('startup'); }, []);
 
   // Reading mode: when the front window is the resume or a project folder, switch the CRT
   // lens + scanlines off over it so the text is crisp ('full' = whole screen, 'right' = detail half).

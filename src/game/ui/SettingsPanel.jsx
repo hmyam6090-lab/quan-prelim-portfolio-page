@@ -1,6 +1,7 @@
 import { useGame } from '../store';
 import { playSound } from '../sound';
 import Panel from './Panel';
+import { TRACKS, nextTrack, useMusic } from '../music';
 
 function Toggle({ label, value, onChange, hint }) {
   return (
@@ -23,11 +24,12 @@ export default function SettingsPanel() {
   const update = useGame((st) => st.updateSettings);
   const reset = useGame((st) => st.resetSettings);
   const close = useGame((st) => st.closePanel);
+  const track = TRACKS[useMusic((m) => m.index)];
 
   return (
     <Panel title="SETTINGS" className="settings-panel">
       <div className="set-row">
-        <span className="set-label">Volume</span>
+        <span className="set-label">Sound FX</span>
         <input
           type="range" min="0" max="1" step="0.05" value={s.volume}
           onChange={(e) => update({ volume: parseFloat(e.target.value) })}
@@ -35,6 +37,19 @@ export default function SettingsPanel() {
           aria-label="Volume"
         />
         <span className="set-value">{Math.round(s.volume * 100)}</span>
+      </div>
+      <div className="set-row">
+        <span className="set-label">Music</span>
+        <input
+          type="range" min="0" max="1" step="0.05" value={s.music}
+          onChange={(e) => update({ music: parseFloat(e.target.value) })}
+          aria-label="Music volume"
+        />
+        <span className="set-value">{Math.round(s.music * 100)}</span>
+      </div>
+      <div className="set-row">
+        <span className="set-label">Now playing<small>{track.title} — {track.artist}</small></span>
+        <button className="set-toggle on" onClick={() => { playSound('radio'); nextTrack(); }}>NEXT ♪</button>
       </div>
       <div className="set-row">
         <span className="set-label">Graphics<small>Low = no shadows / effects</small></span>

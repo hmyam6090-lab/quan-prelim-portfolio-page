@@ -8,7 +8,8 @@ import { create } from 'zustand';
 
 const SETTINGS_KEY = 'quan-portfolio-settings-v4';
 const DEFAULT_SETTINGS = {
-  volume: 0.6,
+  volume: 0.7,       // sound effects
+  music: 0.5,        // background music
   quality: 'high',   // 'high' | 'low'  (shadows + post effects)
   dither: true,      // picoCAD ordered dithering between shade steps
   grain: true,
