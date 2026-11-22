@@ -29,9 +29,9 @@ export default function CameraRig() {
 
     // gentle parallax sway on the menu
     if (phase === 'menu' && !still) {
-      goal.pos.x += state.pointer.x * 0.9;
-      goal.pos.y += state.pointer.y * 0.5;
-      goal.target.x += state.pointer.x * 0.25;
+      goal.pos.x += state.pointer.x * 0.45;
+      goal.pos.y += state.pointer.y * 0.3;
+      goal.target.x += state.pointer.x * 0.12;
       goal.pos.y += Math.sin(state.clock.elapsedTime * 0.4) * 0.12;
     }
 

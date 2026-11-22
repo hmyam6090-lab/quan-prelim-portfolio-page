@@ -6,6 +6,7 @@ import Room from './Room';
 import Lighting from './Lighting';
 import SunBeams from './SunBeams';
 import Sky from './Sky';
+import Radio from './Radio';
 import DayNight from './DayNight';
 import CameraVignette from './CameraVignette';
 import Effects from './Effects';
@@ -13,6 +14,10 @@ import CameraRig from './CameraRig';
 import Menu3D from './Menu3D';
 import MenuUI from './ui/MenuUI';
 import CrtLens from './CrtLens';
+import { playSound } from './sound';
+import { startMusic } from './music';
+import { getAudioCtx } from './audioCtx';
+import MusicToast from './ui/MusicToast';
 import { useGame } from './store';
 import './game.css';
 
@@ -47,6 +52,25 @@ export default function Experience() {
 
   useEffect(() => { PICO_UNIFORMS.uDither.value = dither ? 1 : 0; }, [dither]);
 
+  // Music starts when loading finishes; if autoplay was blocked, any click / key retries
+  // (and resumes the shared audio context, which browsers keep suspended until a gesture).
+  useEffect(() => { if (ready) startMusic(); }, [ready]);
+  useEffect(() => {
+    const go = () => { getAudioCtx(); startMusic(); };
+    window.addEventListener('pointerdown', go);
+    window.addEventListener('keydown', go);
+    return () => {
+      window.removeEventListener('pointerdown', go);
+      window.removeEventListener('keydown', go);
+    };
+  }, []);
+
+  // PC power-on chime when the camera arrives at the computer, power-down when leaving.
+  useEffect(() => useGame.subscribe((s, prev) => {
+    if (s.phase === 'os' && prev.phase === 'zoomIn') playSound('startup');
+    if (s.phase === 'zoomOut' && prev.phase === 'os') playSound('shutdown');
+  }), []);
+
   // Esc backs out of the computer to the main menu.
   useEffect(() => {
     const onKey = (e) => {
@@ -75,6 +99,7 @@ export default function Experience() {
           <DayNight />
           <Room />
           <Sky />
+          <Radio />
           <SunBeams />
           <Menu3D />
           <CameraRig />
@@ -86,6 +111,7 @@ export default function Experience() {
       </Canvas>
       <div className="crt-vignette" aria-hidden />
       <MenuUI />
+      <MusicToast />
       <div className={`loading-screen ${ready ? 'done' : ''}`} aria-hidden={ready}>
         <div className="loading-title">LOADING<span className="dots" /></div>
       </div>

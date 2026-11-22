@@ -8,7 +8,7 @@ import { playSound } from './sound';
 import { DAYNIGHT } from './timeOfDay';
 import {
   applyNightToEmissive, collectEmissive, easeDrawer, flipLever, hasTag,
-  makeArrowSprite, makeSwitchGlow, pulseSwitchHint,
+  makeArrowSprite, makeSwitchGlow, makeWallFrame, pulseSwitchHint, showOutline,
 } from './roomFx';
 import Screen from './Screen';
 
@@ -38,6 +38,7 @@ export default function Room() {
       emissive: collectEmissive(room.tagged),
       drawer: furniture.tagged.drawer?.[0],
       lever: room.tagged.lever?.[0],
+      switchHulls: swBox ? makeWallFrame(swBox) : [],
       glow,
       arrow: makeArrowSprite(),
       basePos,
@@ -71,13 +72,16 @@ export default function Room() {
   const interactive = () => useGame.getState().phase === 'menu' && !useGame.getState().panel;
   const setCursor = (on) => { document.body.style.cursor = on ? 'pointer' : ''; };
 
+  // R3F calls these once per intersected surface (nearest first): only the nearest counts,
+  // otherwise the wall behind the switch / desk behind the drawer would cancel the hover.
   const onFurnitureMove = (e) => {
     if (!interactive()) return;
+    e.stopPropagation();
     const over = hasTag(e.object, 'drawer');
     if (over !== hover.current.drawer) {
       hover.current.drawer = over;
       if (!over) hover.current.drawerLeft = performance.now();
-      else playSound('hover');
+      else playSound('drawer');
     }
   };
   const onFurnitureOut = () => {
@@ -87,20 +91,22 @@ export default function Room() {
 
   const onRoomMove = (e) => {
     if (!interactive()) return;
+    e.stopPropagation();
     const over = hasTag(e.object, 'switch');
     if (over !== hover.current.switch) {
       hover.current.switch = over;
       setCursor(over);
+      showOutline(fx.switchHulls, over);
     }
   };
   const onRoomOut = () => {
-    if (hover.current.switch) setCursor(false);
+    if (hover.current.switch) { setCursor(false); showOutline(fx.switchHulls, false); }
     hover.current.switch = false;
   };
   const onRoomClick = (e) => {
     if (!interactive() || !hasTag(e.object, 'switch')) return;
     e.stopPropagation();
-    playSound('click');
+    playSound('switch');
     useGame.getState().toggleNight();
     setSwitchUsed(true);
   };
@@ -114,6 +120,7 @@ export default function Room() {
       <primitive object={computer.root} />
       <primitive object={fx.glow} />
       <primitive object={fx.arrow} />
+      {fx.switchHulls.map((m, i) => <primitive key={`swf${i}`} object={m} />)}
       {glass && <Screen glass={glass} />}
     </group>
   );

@@ -90,3 +90,53 @@ export function pulseSwitchHint({ glow, arrow, basePos }, show, hovered, t, dt) 
   arrow.material.opacity = THREE.MathUtils.damp(arrow.material.opacity, show ? 1 : 0, 6, dt);
   arrow.position.set(basePos.x - 0.4, basePos.y + 2.1 + Math.sin(t * 4) * 0.18, basePos.z);
 }
+
+/** White "inverted hull" hover outline: for every mesh under `root`, a copy whose faces are
+ *  pushed out along their own (flat) normals by `thickness` and drawn back-face only, so it
+ *  only shows as a rim around the silhouette. Hidden until hover. */
+const OUTLINE_MAT = new THREE.MeshBasicMaterial({ color: '#ffffff', side: THREE.BackSide, toneMapped: false });
+export function addOutline(root, thickness = 0.12) {
+  const hulls = [];
+  const meshes = [];
+  root.traverse((o) => { if (o.isMesh && !o.userData.outline) meshes.push(o); });
+  for (const m of meshes) {
+    const g = new THREE.BufferGeometry();
+    const pos = m.geometry.getAttribute('position');
+    const nor = m.geometry.getAttribute('normal');
+    const out = new Float32Array(pos.count * 3);
+    for (let i = 0; i < pos.count; i++) {
+      out[i * 3] = pos.getX(i) + nor.getX(i) * thickness;
+      out[i * 3 + 1] = pos.getY(i) + nor.getY(i) * thickness;
+      out[i * 3 + 2] = pos.getZ(i) + nor.getZ(i) * thickness;
+    }
+    g.setAttribute('position', new THREE.BufferAttribute(out, 3));
+    const hull = new THREE.Mesh(g, OUTLINE_MAT);
+    hull.userData.outline = true;
+    hull.visible = false;
+    hull.raycast = () => {};
+    hull.castShadow = false;
+    m.add(hull);
+    hulls.push(hull);
+  }
+  return hulls;
+}
+
+export function showOutline(hulls, on) {
+  for (const h of hulls) h.visible = on;
+}
+
+/** Hover outline for flat things mounted on the right wall (the light switch): a white
+ *  card on the wall, slightly larger than the object, facing into the room (-x). */
+export function makeWallFrame(box, border = 0.14) {
+  const size = box.getSize(new THREE.Vector3());
+  const c = box.getCenter(new THREE.Vector3());
+  const m = new THREE.Mesh(
+    new THREE.PlaneGeometry(size.z + border * 2, size.y + border * 2),
+    new THREE.MeshBasicMaterial({ color: '#ffffff', toneMapped: false }),
+  );
+  m.rotation.y = -Math.PI / 2;
+  m.position.set(box.max.x - 0.01, c.y, c.z);
+  m.visible = false;
+  m.raycast = () => {};
+  return [m];
+}
