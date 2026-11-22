@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local-only tooling & notes (never commit)
+picoCAD_Mac/
+CLAUDE.md
+.claude/
+__pycache__/
