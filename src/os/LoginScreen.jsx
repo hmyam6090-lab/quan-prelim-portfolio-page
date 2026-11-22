@@ -3,6 +3,7 @@ import { useGame } from '../game/store';
 import { playSound } from '../game/sound';
 import { LOGIN_PHOTO, PASSWORD } from './config';
 import { Logo } from './Logo';
+import PixelImg from './PixelImg';
 
 const HINTS = [
   'Wrong password. Psst… check the sticky note →',
@@ -57,7 +58,7 @@ export default function LoginScreen({ active }) {
         </div>
         <form className="login-body" onSubmit={submit}>
           <div className="photo-frame">
-            <img src={import.meta.env.BASE_URL + LOGIN_PHOTO} alt="Quan Hoang" draggable={false} />
+            <PixelImg src={import.meta.env.BASE_URL + LOGIN_PHOTO} alt="Quan Hoang holding a ginger and white cat" pixels={84} />
             <i className="corner tl" /><i className="corner tr" /><i className="corner bl" /><i className="corner br" />
           </div>
           <label className={`pw-row ${shake ? 'shake' : ''}`}>
@@ -80,8 +81,8 @@ export default function LoginScreen({ active }) {
             <button className="os-btn submit-btn" type="submit">SUBMIT</button>
           )}
           {!busy && (
-            <button type="button" className="guest-link" onClick={() => { playSound('click'); enter(); }}>
-              guest login
+            <button type="button" className="skip-login" onClick={() => { playSound('click'); enter(); }}>
+              Just let me see your portfolio <span className="skip-arrow" aria-hidden>»</span>
             </button>
           )}
         </form>

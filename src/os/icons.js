@@ -40,6 +40,51 @@ export const ICONS = {
     <rect x="10" y="14" width="44" height="32" fill="#bfe3ff"/>
     <path d="M10 46l12-14 10 10 8-8 14 12z" fill="#5fb35a"/>
     <rect x="40" y="18" width="8" height="8" fill="#ffd21f"/>`),
+  mail: svg(`
+    <rect x="6" y="14" width="52" height="36" fill="#fffdf5"/>
+    <path d="M6 14h52v4H6z" fill="#d8d4c8"/>
+    <path d="M6 14l26 20 26-20v4L32 38 6 18z" fill="#2b3aa6"/>
+    <rect x="6" y="48" width="52" height="2" fill="#9a968c"/>`),
+  play: svg(`<path d="M18 10l34 22-34 22z" fill="#fffdf5"/>`),
+  // ---- botched favourite-game icons (deliberately a bit off)
+  craftmine: svg(`
+    <path d="M32 7l25 12-25 13L7 19z" fill="#5fbf3a"/>
+    <path d="M7 19l25 13v27L7 46z" fill="#8a5a2b"/>
+    <path d="M57 19v27L32 59V32z" fill="#6b4220"/>
+    <path d="M7 19l25 13v5L7 25z" fill="#4ea12f"/>
+    <path d="M57 19v6L32 37v-5z" fill="#3f8a25"/>
+    <rect x="12" y="26" width="4" height="5" fill="#4ea12f"/><rect x="22" y="31" width="4" height="4" fill="#4ea12f"/>
+    <rect x="40" y="33" width="4" height="4" fill="#3f8a25"/><rect x="50" y="27" width="4" height="5" fill="#3f8a25"/>
+    <rect x="14" y="38" width="3" height="3" fill="#a8743c"/><rect x="24" y="47" width="3" height="3" fill="#5e3a19"/>
+    <rect x="44" y="45" width="3" height="3" fill="#4d2f15"/><rect x="27" y="14" width="5" height="3" fill="#7fd65a"/>
+    <rect x="38" y="20" width="4" height="3" fill="#4ea12f"/>`),
+  teamfight: svg(`
+    <path d="M32 4l24 14v28L32 60 8 46V18z" fill="#d9a520"/>
+    <path d="M32 10l19 11v22L32 54 13 43V21z" fill="#1d2f6b"/>
+    <path d="M20 40l4-14 8 7 8-9 4 16z" fill="#ffd84a"/>
+    <rect x="22" y="40" width="21" height="4" fill="#ffd84a"/>
+    <rect x="30" y="31" width="4" height="4" fill="#ff4f6b"/>
+    <rect x="23" y="24" width="3" height="3" fill="#ffd84a"/><rect x="39" y="22" width="3" height="3" fill="#ffd84a"/>`),
+  uppertale: svg(`
+    <rect x="4" y="4" width="56" height="56" fill="#0b0b0b"/>
+    <path d="M32 18l-14 14v6h4v4h4v4h4v-4h4v4h4v-4h4v-4h4v-6z" fill="#ff1f1f" transform="rotate(180 32 34)"/>
+    <rect x="25" y="41" width="4" height="4" fill="#ff8a8a"/>
+    <rect x="10" y="52" width="44" height="3" fill="#ffffff"/>`),
+  seleste: svg(`
+    <rect x="4" y="4" width="56" height="56" fill="#3b2a6b"/>
+    <path d="M4 54l18-26 8 10 10-18 20 34z" fill="#7a5fb0"/>
+    <path d="M40 20l5 9-3-2-2 3-2-3-3 2z" fill="#f4f1ff"/>
+    <path d="M22 28l4 6-4-1-3 2z" fill="#f4f1ff"/>
+    <rect x="14" y="9" width="2" height="2" fill="#fff"/><rect x="48" y="12" width="2" height="2" fill="#fff"/>
+    <path d="M44 40c4-1 7 2 6 6-1 5-5 8-7 8s-6-3-7-8c-1-4 3-7 8-6z" fill="#e8343c"/>
+    <rect x="42" y="37" width="6" height="3" fill="#4ea12f"/>
+    <rect x="41" y="44" width="2" height="2" fill="#ffd84a"/><rect x="46" y="47" width="2" height="2" fill="#ffd84a"/>`),
+  gallery: svg(`
+    <rect x="6" y="10" width="52" height="44" fill="#d9a520"/>
+    <rect x="10" y="14" width="44" height="36" fill="#bfe3ff"/>
+    <path d="M10 50l13-15 9 9 8-7 14 13z" fill="#5fb35a"/>
+    <rect x="40" y="18" width="8" height="8" fill="#ffd21f"/>
+    <rect x="6" y="10" width="52" height="3" fill="#f0c94a"/>`),
   logo: svg(`
     <rect x="8" y="8" width="22" height="22" fill="#ff3b3b"/>
     <rect x="34" y="8" width="22" height="22" fill="#5fd23a"/>

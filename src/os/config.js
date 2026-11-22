@@ -13,7 +13,7 @@ export const RESUME = {
   downloadName: 'Quan_Hoang_Resume.pdf',
 };
 
-export const LOGIN_PHOTO = 'photos/headshot.png';      // TODO: swap for the photo with the cat
+export const LOGIN_PHOTO = 'photos/quan-with-cat.jpg';
 export const PREVIEW_PHOTO = { file: 'photos/photo3.jpg', name: 'photo3.jpg' };
 
 // Desktop icons: two columns on the left (ref 3). `open` = window id or link.
@@ -26,6 +26,12 @@ export const DESKTOP_ICONS = [
   { id: 'github', label: 'GitHub', icon: 'github', link: LINKS.github, col: 1, row: 1 },
   { id: 'linkedin', label: 'LinkedIn', icon: 'linkedin', link: LINKS.linkedin, col: 1, row: 2 },
   { id: 'itchio', label: 'Itch.io', icon: 'itchio', link: LINKS.itchio, col: 1, row: 3 },
+  // bottom-right corner (corner: 'br' → col/row count from the right/bottom edges)
+  { id: 'gallery', label: 'Gallery', icon: 'gallery', open: 'gallery', corner: 'br', col: 0, row: 0 },
+  { id: 'uppertale', label: 'UpperTale', icon: 'uppertale', open: 'game:uppertale', corner: 'br', col: 0, row: 1 },
+  { id: 'craftmine', label: 'CraftMine', icon: 'craftmine', open: 'game:craftmine', corner: 'br', col: 1, row: 0 },
+  { id: 'teamfight', label: 'Teamfight Str…', icon: 'teamfight', open: 'game:teamfight', corner: 'br', col: 1, row: 1 },
+  { id: 'seleste', label: 'Seleste', icon: 'seleste', open: 'game:seleste', corner: 'br', col: 2, row: 0 },
 ];
 
 export const FOLDERS = {
