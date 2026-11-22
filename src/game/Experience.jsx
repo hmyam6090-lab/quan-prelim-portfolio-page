@@ -18,6 +18,7 @@ import { playSound } from './sound';
 import { startMusic } from './music';
 import { getAudioCtx } from './audioCtx';
 import MusicToast from './ui/MusicToast';
+import StartGate from './ui/StartGate';
 import { useGame } from './store';
 import './game.css';
 
@@ -52,9 +53,8 @@ export default function Experience() {
 
   useEffect(() => { PICO_UNIFORMS.uDither.value = dither ? 1 : 0; }, [dither]);
 
-  // Music starts when loading finishes; if autoplay was blocked, any click / key retries
-  // (and resumes the shared audio context, which browsers keep suspended until a gesture).
-  useEffect(() => { if (ready) startMusic(); }, [ready]);
+  // Music starts when loading finishes (StartGate asks for one click if the browser blocked
+  // autoplay). Any later click / key also retries and resumes the shared audio context.
   useEffect(() => {
     const go = () => { getAudioCtx(); startMusic(); };
     window.addEventListener('pointerdown', go);
@@ -112,6 +112,7 @@ export default function Experience() {
       <div className="crt-vignette" aria-hidden />
       <MenuUI />
       <MusicToast />
+      <StartGate ready={ready} />
       <div className={`loading-screen ${ready ? 'done' : ''}`} aria-hidden={ready}>
         <div className="loading-title">LOADING<span className="dots" /></div>
       </div>

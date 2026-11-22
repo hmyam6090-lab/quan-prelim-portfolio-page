@@ -88,6 +88,12 @@ export function nextTrack(fromUser = true) {
   load(i, true);
 }
 
+/** True when music is actually audible: the track is playing AND the shared audio
+ *  context is running (a suspended context = silent even while "playing"). */
+export function musicAudible() {
+  return !!audio && !audio.paused && (!analyser || analyser.context.state === 'running');
+}
+
 /** 0..1 loudness of the low end, for the radio's squash animation (0 when silent). */
 export function musicLevel() {
   if (!analyser || !audio || audio.paused) return 0;
