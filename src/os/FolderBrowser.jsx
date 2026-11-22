@@ -65,7 +65,12 @@ function Detail({ item }) {
         </div>
       )}
       {d.tags?.length > 0 && <div className="fd-tags">{d.tags.map((t) => <span key={t}>{t}</span>)}</div>}
-      {(d.body || []).map((p, i) => <p key={i} className="fd-p">{p}</p>)}
+      {(d.body || []).map((p, i) => (typeof p === 'string' ? <p key={i} className="fd-p">{p}</p> : (
+        <figure key={i} className="fd-fig">
+          <img src={BASE + p.image} alt={p.caption || ''} loading="lazy" draggable={false} />
+          {p.caption && <figcaption>{p.caption}</figcaption>}
+        </figure>
+      )))}
       {d.myRole && (
         <>
           <h3>My role</h3>
