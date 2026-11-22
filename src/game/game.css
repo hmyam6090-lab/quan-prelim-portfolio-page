@@ -22,6 +22,22 @@ body {
 
 .game { position: fixed; inset: 0; }
 .game-canvas { position: absolute !important; inset: 0; touch-action: none; }
+.game.pixelated .game-canvas canvas { image-rendering: pixelated; image-rendering: crisp-edges; }
+
+/* CRT close-up: barrel lens over canvas + QuanOS (see CrtLens.jsx), dark lens vignette and a
+   soft warm key light from the upper left, like refs 2/3 */
+.game.lens .game-canvas { filter: url(#crt-fisheye); }
+.crt-vignette {
+  position: absolute; inset: 0; z-index: 25; pointer-events: none;
+  opacity: 0; transition: opacity 0.9s ease;
+  background:
+    radial-gradient(ellipse 75% 80% at 50% 48%, transparent 55%, rgba(8, 6, 16, 0.55) 85%, rgba(4, 3, 10, 0.92) 100%),
+    radial-gradient(ellipse 60% 70% at 18% 20%, rgba(255, 214, 160, 0.10), transparent 70%);
+}
+.game.phase-os .crt-vignette, .game.phase-zoomIn .crt-vignette { opacity: 1; }
+.game.phase-zoomIn .crt-vignette { transition-duration: 1.8s; }
+
+
 
 /* ------------------------------------------------------------ loading */
 .loading-screen {
@@ -152,7 +168,6 @@ body {
   z-index: 2;
 }
 .no-btn { position: absolute; right: 12%; top: 50%; transform: translateY(-50%); }
-.quit-count { text-align: center; font-family: var(--font-mono); font-size: 18px; opacity: 0.7; margin-top: 6px; }
 
 @media (max-width: 520px) {
   .skip-btn { right: 50%; transform: translateX(50%); bottom: 16px; font-size: 14px; white-space: nowrap; }

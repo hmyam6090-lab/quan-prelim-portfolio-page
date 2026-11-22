@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useGame } from '../store';
-import { playSound } from '../sound';
+import { playPop, playSound } from '../sound';
 import Panel from './Panel';
 
 const TAUNTS = [
@@ -17,6 +17,7 @@ const TAUNTS = [
 ];
 
 const DODGE_RADIUS = 95;   // px from the YES centre that triggers a dodge
+const DODGE_COOLDOWN = 260; // ms: one dodge (and one pop) per approach, no sfx spam
 
 /** QUIT joke: the YES button physically avoids the pointer (and touch, and keyboard). */
 export default function QuitDialog() {
@@ -25,8 +26,12 @@ export default function QuitDialog() {
   const yes = useRef(null);
   const [pos, setPos] = useState({ x: 0.22, y: 0.5 });   // fractions of the arena
   const [dodges, setDodges] = useState(0);
+  const lastDodge = useRef(0);
 
   const dodge = useCallback((px, py) => {
+    const now = performance.now();
+    if (now - lastDodge.current < DODGE_COOLDOWN) return;
+    lastDodge.current = now;
     const a = arena.current?.getBoundingClientRect();
     const b = yes.current?.getBoundingClientRect();
     if (!a || !b) return;
@@ -43,7 +48,7 @@ export default function QuitDialog() {
     }
     setPos(best);
     setDodges((d) => d + 1);
-    playSound('hover');
+    playPop();
   }, []);
 
   const onMove = (e) => {
@@ -87,7 +92,6 @@ export default function QuitDialog() {
           {dodges >= 6 ? 'Fine, I\'ll stay' : 'NO'}
         </button>
       </div>
-      {dodges >= 3 && <p className="quit-count">dodges: {dodges}</p>}
     </Panel>
   );
 }

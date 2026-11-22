@@ -6,38 +6,49 @@ import { SCREEN } from './poses';
 import QuanOS from '../os/QuanOS';
 import { setMaterial } from '../three/prepare';
 
-const TITLE_COLS = ['#ffd21f', '#ff9a1f', '#5fd23a', '#3ac85a', null, '#ff3b3b', '#ff5fa8', '#5fd23a', '#3aa8ff', '#5a7cff'];
+// Same chunky glyphs as the 3D title (tools/picocad/assets/pixel_text.py).
+const GLYPH = {
+  Q: ['.####.', '##..##', '##..##', '##..##', '##.###', '##..##', '.###.#'],
+  H: ['##..##', '##..##', '##..##', '######', '##..##', '##..##', '##..##'],
+};
+const TINY = { // 3x5 font for "PORTFOLIO"
+  P: ['##.', '#.#', '##.', '#..', '#..'], O: ['.#.', '#.#', '#.#', '#.#', '.#.'],
+  R: ['##.', '#.#', '##.', '#.#', '#.#'], T: ['###', '.#.', '.#.', '.#.', '.#.'],
+  F: ['###', '#..', '##.', '#..', '#..'], L: ['#..', '#..', '#..', '#..', '###'],
+  I: ['###', '.#.', '.#.', '.#.', '###'],
+};
 
-/** The idle CRT image seen from the menu (ref 1): blue screen + rainbow logo. */
+/** The idle CRT image seen from the menu: a pixel "QH" boot logo in the title's colours
+ *  (Q yellow→orange, H red→pink, dark rim + drop shadow) on the QuanOS blue. 48 x 36
+ *  texels so it stays crisp at the picoCAD render resolution. */
 function makeLogoTexture() {
+  const W = 48, H = 36, S = 2;
   const c = document.createElement('canvas');
-  c.width = 256; c.height = 192;
+  c.width = W; c.height = H;
   const g = c.getContext('2d');
-  const grd = g.createRadialGradient(128, 96, 20, 128, 96, 150);
-  grd.addColorStop(0, '#1d2a78');
-  grd.addColorStop(1, '#0d1440');
-  g.fillStyle = grd;
-  g.fillRect(0, 0, 256, 192);
-  g.textBaseline = 'alphabetic';
-  g.font = 'italic 700 34px "Pixelify Sans", monospace';
-  const word = 'Quan Hoang';
-  let x = 30;
-  for (let i = 0; i < word.length; i++) {
-    const ch = word[i];
-    if (ch !== ' ') {
-      g.fillStyle = '#0b0b20';
-      g.fillText(ch, x + 2, 98);
-      g.fillStyle = TITLE_COLS[i];
-      g.fillText(ch, x, 96);
-    }
-    x += g.measureText(ch).width + (ch === ' ' ? -2 : 0);
+  const px = (x, y, w, h, col) => { g.fillStyle = col; g.fillRect(x, y, w, h); };
+  px(0, 0, W, H, '#2b3aa6');
+  for (let y = 0; y < H; y += 2) px(0, y, W, 1, '#2836a0');           // faint scanlines
+  px(0, 0, W, 2, '#1e2a86'); px(0, H - 2, W, 2, '#1e2a86');
+  const glyph = (rows, x0, y0, colAt, off = [0, 0]) => rows.forEach((r, gy) => [...r].forEach((ch, gx) => {
+    if (ch === '#') px(x0 + gx * S + off[0], y0 + gy * S + off[1], S, S, colAt(gy));
+  }));
+  const letters = [
+    [GLYPH.Q, 8, (gy) => (gy < 3 ? '#ffd21f' : gy < 5 ? '#ffb41f' : '#ff9a1f')],
+    [GLYPH.H, 26, (gy) => (gy < 3 ? '#ff3b3b' : gy < 5 ? '#ff4d78' : '#ff5fa8')],
+  ];
+  const y0 = 6;
+  for (const [rows, x0] of letters) glyph(rows, x0, y0, () => '#13184a', [1, 2]);        // shadow
+  for (const [rows, x0] of letters) for (const o of [[-1, 0], [1, 0], [0, -1], [0, 1]]) {
+    glyph(rows, x0, y0, () => '#1d1a33', o);                                             // rim
   }
-  g.font = '700 15px "Pixelify Sans", monospace';
-  g.fillStyle = '#fbf7ee';
-  g.fillText('Portfolio', 150, 118);
-  // scanlines
-  g.fillStyle = 'rgba(0,0,0,0.18)';
-  for (let y = 0; y < 192; y += 2) g.fillRect(0, y, 256, 1);
+  for (const [rows, x0, col] of letters) glyph(rows, x0, y0, col);
+  px(9, y0, 3, 1, '#fff3a8'); px(27, y0, 2, 1, '#ffb3b3');                               // glints
+  let x = 7;
+  for (const ch of 'PORTFOLIO') {
+    TINY[ch].forEach((r, gy) => [...r].forEach((p, gx) => { if (p === '#') px(x + gx, 26 + gy, 1, 1, '#fbf7ee'); }));
+    x += 4;
+  }
   const t = new THREE.CanvasTexture(c);
   t.colorSpace = THREE.SRGBColorSpace;
   t.magFilter = THREE.NearestFilter;

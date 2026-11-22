@@ -6,6 +6,7 @@ import { usePico } from '../three/picoLoader';
 import { bakePicoShading, once } from '../three/prepare';
 import { useGame } from './store';
 import { menuPose } from './poses';
+import { RENDER_ORDER } from './renderOrder';
 import { playSound } from './sound';
 
 const DEPTH = 15;          // distance of the title/menu plane in front of the menu camera
@@ -25,6 +26,37 @@ function anchorTopLeft(obj) {
   return pivot;
 }
 
+/** Grayscale canvas used as an alphaMap: a soft ellipse for the glow cards. */
+function gradientTexture() {
+  const c = document.createElement('canvas');
+  c.width = 64; c.height = 32;
+  const g = c.getContext('2d');
+  const grd = g.createRadialGradient(32, 16, 0, 32, 16, 32);
+  grd.addColorStop(0, '#fff'); grd.addColorStop(0.5, '#555'); grd.addColorStop(1, '#000');
+  g.setTransform(1, 0, 0, 0.5, 0, 8);
+  g.fillStyle = grd;
+  g.fillRect(0, -16, 64, 64);
+  return new THREE.CanvasTexture(c);
+}
+
+function fadeTo(material, target, lambda, dt) {
+  material.opacity = THREE.MathUtils.damp(material.opacity, target, lambda, dt);
+}
+
+const GLOW_COLORS = { play: '#ffb21f', settings: '#ffffff', credits: '#ffffff', quit: '#ff3b4a' };
+
+function glowPlane(w, h, color, alphaMap) {
+  const m = new THREE.Mesh(
+    new THREE.PlaneGeometry(w, h),
+    new THREE.MeshBasicMaterial({
+      color, alphaMap, transparent: true, depthWrite: false, opacity: 0,
+      blending: THREE.AdditiveBlending, toneMapped: false,
+    }),
+  );
+  m.raycast = () => {};
+  return m;
+}
+
 const ACTIONS = {
   play: () => useGame.getState().play(),
   settings: () => useGame.getState().openPanel('settings'),
@@ -41,6 +73,7 @@ export default function Menu3D() {
   const setHovered = useGame((s) => s.setHovered);
 
   const parts = useMemo(() => once(title, 'menu-parts', () => {
+    const glowTex = gradientTexture();
     bakePicoShading(title.root);
     bakePicoShading(menu.root);
     const quanhoang = title.root.getObjectByName('quanhoang');
@@ -58,12 +91,32 @@ export default function Menu3D() {
       );
       hit.position.set(pivot.userData.w / 2, -pivot.userData.h / 2, 0.5);
       hit.userData.menuId = id;
+      hit.userData.hit = true;
       pivot.add(hit);
-      return { id, pivot };
+      // soft additive glow card behind the word ("a little bloom")
+      const glow = glowPlane(pivot.userData.w * 1.3 + 8, pivot.userData.h * 2.4, GLOW_COLORS[id], glowTex);
+      glow.position.set(pivot.userData.w / 2, -pivot.userData.h / 2, -0.8);
+      pivot.add(glow);
+      return { id, pivot, glow };
     });
+    const titlePivot = anchorTopLeft(quanhoang);
+    const titleGlow = glowPlane(titlePivot.userData.w * 1.25, titlePivot.userData.h * 2.6, '#ffe2a8', glowTex);
+    titleGlow.position.set(titlePivot.userData.w / 2, -titlePivot.userData.h / 2, -1);
+    titlePivot.add(titleGlow);
+    const portfolioPivot = anchorTopLeft(portfolio);
+    // draw order: room < camera vignette (5) < glow cards (6) < text (7). Done after the
+    // re-parenting into layout pivots above, so every letter mesh is reached.
+    for (const root of [titlePivot, portfolioPivot, ...items.map((it) => it.pivot)]) {
+      root.traverse((o) => {
+        if (!o.isMesh || o.userData.menuGlow || o.userData.hit) return;
+        o.material.transparent = true;   // so it sorts after the vignette
+        o.renderOrder = RENDER_ORDER.text;
+      });
+    }
     return {
-      title: anchorTopLeft(quanhoang),
-      portfolio: anchorTopLeft(portfolio),
+      title: titlePivot,
+      titleGlow,
+      portfolio: portfolioPivot,
       letters,
       items,
     };
@@ -108,9 +161,14 @@ export default function Menu3D() {
 
   useFrame((state, dt) => {
     const t = state.clock.elapsedTime;
+    const { phase: ph, settings } = useGame.getState();
+    const show = ph === 'menu' ? 1 : 0;
+    const glowK = settings.bloom ? 1 : 0;
+    fadeTo(parts.titleGlow.material, show * glowK * (0.13 + Math.sin(t * 1.3) * 0.03), 4, dt);
     parts.letters.forEach((l, i) => { l.obj.position.y = l.y + Math.sin(t * 2.2 - i * 0.55) * 0.35; });
-    parts.items.forEach(({ id, pivot }) => {
+    parts.items.forEach(({ id, pivot, glow }) => {
       const on = hovered === id;
+      fadeTo(glow.material, show * glowK * (on ? 0.42 : 0.12), 10, dt);
       easing.damp(pivot.position, 'x', pivot.userData.baseX + (on ? pivot.scale.x * 3 : 0), 0.08, dt);
       const s = pivot.userData.s ?? 1;
       pivot.userData.s = THREE.MathUtils.damp(s, on ? 1.12 : 1, 14, dt);

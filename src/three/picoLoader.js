@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { suspend } from 'suspend-react';
+import { buildIndexTexture, buildRamps, makePicoMaterial } from './picoMaterial';
 
 /*
  * Loads a picoCAD 2 project (JSON) into a three.js Group.
@@ -8,6 +9,7 @@ import { suspend } from 'suspend-react';
  *   Pixels using `transparent_color` become alpha 0 (cut out with alphaTest).
  * - Faces: `notex` faces use their palette colour as a vertex colour, other faces
  *   sample the texture. `dbl` -> double sided, `noshade` -> unlit (MeshBasic).
+ *   Lit faces get picoCAD palette-ramp + dither shading (see picoMaterial.js).
  * - Node names may carry tags: "crt glass #screen #emissive:2.5".
  *   They end up in `object.userData.tags` and in the returned `tagged` map.
  */
@@ -43,7 +45,7 @@ function buildTexture(tex) {
   return t;
 }
 
-function makeMaterialFactory(map) {
+function makeMaterialFactory(map, idxMap, ramps) {
   const cache = new Map();
   return (textured, dbl, unlit) => {
     const key = `${textured}|${dbl}|${unlit}`;
@@ -54,9 +56,10 @@ function makeMaterialFactory(map) {
       map: textured ? map : null,
       alphaTest: textured ? 0.5 : 0,
     };
+    // Unlit faces keep their exact colour; lit faces use picoCAD palette-ramp dithering.
     const mat = unlit
       ? new THREE.MeshBasicMaterial({ ...common, toneMapped: false })
-      : new THREE.MeshStandardMaterial({ ...common, flatShading: true, roughness: 0.92, metalness: 0 });
+      : makePicoMaterial({ textured, map, idxMap, ramps, side: common.side });
     mat.userData.textured = textured;
     mat.userData.unlit = unlit;
     cache.set(key, mat);
@@ -71,7 +74,7 @@ function buildMesh(meshData, colors, getMat) {
   for (const f of meshData.faces) {
     const textured = !f.notex;
     const key = `${textured}|${!!f.dbl}|${!!f.noshade}`;
-    if (!buckets.has(key)) buckets.set(key, { textured, dbl: !!f.dbl, unlit: !!f.noshade, pos: [], nor: [], uv: [], col: [] });
+    if (!buckets.has(key)) buckets.set(key, { textured, dbl: !!f.dbl, unlit: !!f.noshade, pos: [], nor: [], uv: [], col: [], idx: [] });
     const b = buckets.get(key);
 
     const pts = f.vertex_ids.map(id => new THREE.Vector3(V[(id - 1) * 3], V[(id - 1) * 3 + 1], V[(id - 1) * 3 + 2]));
@@ -93,15 +96,16 @@ function buildMesh(meshData, colors, getMat) {
         b.nor.push(n.x, n.y, n.z);
         b.uv.push(uvs[j][0], uvs[j][1]);
         b.col.push(color.r, color.g, color.b);
+        b.idx.push(f.color);
       }
     }
   }
 
-  const pos = [], nor = [], uv = [], col = [], materials = [];
+  const pos = [], nor = [], uv = [], col = [], idx = [], materials = [];
   const geo = new THREE.BufferGeometry();
   let start = 0;
   for (const b of buckets.values()) {
-    pos.push(...b.pos); nor.push(...b.nor); uv.push(...b.uv); col.push(...b.col);
+    for (const k of ['pos', 'nor', 'uv', 'col', 'idx']) { const dst = { pos, nor, uv, col, idx }[k]; for (const v of b[k]) dst.push(v); }
     const count = b.pos.length / 3;
     geo.addGroup(start, count, materials.length);
     materials.push(getMat(b.textured, b.dbl, b.unlit));
@@ -111,6 +115,7 @@ function buildMesh(meshData, colors, getMat) {
   geo.setAttribute('normal', new THREE.Float32BufferAttribute(nor, 3));
   geo.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
   geo.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+  geo.setAttribute('palIdx', new THREE.Float32BufferAttribute(idx, 1));
   geo.computeBoundingBox();
   geo.computeBoundingSphere();
   return new THREE.Mesh(geo, materials);
@@ -119,7 +124,9 @@ function buildMesh(meshData, colors, getMat) {
 export function parsePico(project) {
   const tex = project.texture;
   const map = buildTexture(tex);
-  const getMat = makeMaterialFactory(map);
+  const idxMap = buildIndexTexture(tex.pixels);
+  const ramps = buildRamps(tex.colors, tex.shade_pal_1, tex.shade_pal_2);
+  const getMat = makeMaterialFactory(map, idxMap, ramps);
   const tagged = {};
 
   const walk = (n) => {

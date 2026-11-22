@@ -46,6 +46,8 @@ export default function SettingsPanel() {
           ))}
         </div>
       </div>
+      <Toggle label="Night mode" hint="or flip the light switch" value={s.night} onChange={(v) => update({ night: v })} />
+      <Toggle label="Dithering" hint="picoCAD-style shading" value={s.dither} onChange={(v) => update({ dither: v })} />
       <Toggle label="Bloom" value={s.bloom} onChange={(v) => update({ bloom: v })} />
       <Toggle label="Film grain" value={s.grain} onChange={(v) => update({ grain: v })} />
       <Toggle label="CRT scanlines" value={s.crt} onChange={(v) => update({ crt: v })} />

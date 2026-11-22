@@ -37,8 +37,8 @@ export function screenPose(aspect) {
   const t = Math.tan(deg(fov) / 2);
   const portrait = aspect < 1;
   // area to keep in view (units)
-  const needW = portrait ? SCREEN.width * 1.04 : 5.9;
-  const needH = portrait ? SCREEN.height * 1.1 : 3.85;
+  const needW = portrait ? SCREEN.width * 1.04 : 5.5;
+  const needH = portrait ? SCREEN.height * 1.1 : 3.6;
   const dist = Math.max(needH / 2 / t, needW / 2 / (t * aspect));
   const cx = SCREEN.center.x + (portrait ? 0 : 0.42);
   const cy = SCREEN.center.y - (portrait ? 0 : 0.05);

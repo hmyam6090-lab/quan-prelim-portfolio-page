@@ -35,6 +35,14 @@ export default function CameraRig() {
       goal.pos.y += Math.sin(state.clock.elapsedTime * 0.4) * 0.12;
     }
 
+    // at the computer: keep the camera alive with a very small idle drift (breathing)
+    if (phase === 'os' && !still) {
+      const t = state.clock.elapsedTime;
+      goal.pos.x += Math.sin(t * 0.37) * 0.035 + state.pointer.x * 0.04;
+      goal.pos.y += Math.sin(t * 0.61) * 0.03 + state.pointer.y * 0.025;
+      goal.target.x += Math.sin(t * 0.29) * 0.012;
+    }
+
     const smooth = still ? 0.0001 : toScreen ? 0.45 : 0.4;
     const d = Math.min(dt, 0.05);
     easing.damp3(camera.position, goal.pos, smooth, d);
