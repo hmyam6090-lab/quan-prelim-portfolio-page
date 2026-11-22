@@ -45,7 +45,7 @@ const Desktop = ({
     // Right column (top to bottom)
     { id: 'link-github', label: 'GitHub', iconType: 'github', x: 68, y: 15, depth: 1.4, url: 'https://github.com/hmyam6090-lab' },
     { id: 'readme', label: 'README.md', iconType: 'document', x: 92, y: 18, depth: 1.3 },
-    { id: 'link-linkedin', label: 'LinkedIn', iconType: 'linkedin', x: 72, y: 30, depth: 1.1, url: 'https://www.linkedin.com/in/qu%C3%A2n-m-ho%C3%A0ng-251160383/' },
+    { id: 'link-linkedin', label: 'LinkedIn', iconType: 'linkedin', x: 72, y: 30, depth: 1.1, url: 'https://www.linkedin.com/in/quan-hoang-251160383/' },
     { id: 'mockup', label: 'mockup.fig', iconType: 'image', x: 87, y: 36, depth: 0.6 },
     { id: 'link-itchio', label: 'Itch.io', iconType: 'itchio', x: 76, y: 43, depth: 0.9, url: 'https://hmyam6090-lab.itch.io/' },
     { id: 'minesweeper', label: 'Minesweeper.exe', iconType: 'minesweeper', x: 72, y: 58, depth: 0.7 },

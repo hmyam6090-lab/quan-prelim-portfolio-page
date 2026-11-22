@@ -4,12 +4,12 @@ export const PASSWORD = 'ilovecats';   // compared case/space-insensitively
 
 export const LINKS = {
   github: 'https://github.com/hmyam6090-lab',
-  linkedin: 'https://www.linkedin.com/in/qu%C3%A2n-m-ho%C3%A0ng-251160383/',
+  linkedin: 'https://www.linkedin.com/in/quan-hoang-251160383/',
   itchio: 'https://hmyam6090-lab.itch.io/',
 };
 
 export const RESUME = {
-  file: 'images/Quan_Hoang_Resume_Aug28.pdf',
+  file: 'images/Quan_Hoang_Resume.pdf',
   downloadName: 'Quan_Hoang_Resume.pdf',
 };
 

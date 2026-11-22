@@ -56,10 +56,10 @@ const AboutContent = () => {
         </div>
 
         <div className="about-links">
-          <a href="./images/Quan_Hoang_Resume_Aug28.pdf" target="_blank" rel="noopener noreferrer" className="about-link">Resume</a>
+          <a href="./images/Quan_Hoang_Resume.pdf" target="_blank" rel="noopener noreferrer" className="about-link">Resume</a>
           <a href="mailto:hmyam6090@gmail.com" className="about-link">Email</a>
           <a href="https://github.com/hmyam6090-lab" target="_blank" rel="noopener noreferrer" className="about-link">GitHub</a>
-          <a href="https://www.linkedin.com/in/qu%C3%A2n-m-ho%C3%A0ng-251160383/" target="_blank" rel="noopener noreferrer" className="about-link">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/quan-hoang-251160383/" target="_blank" rel="noopener noreferrer" className="about-link">LinkedIn</a>
           <a href="https://hmyam6090-lab.itch.io/" target="_blank" rel="noopener noreferrer" className="about-link">Itch.io</a>
         </div>  
       </div>

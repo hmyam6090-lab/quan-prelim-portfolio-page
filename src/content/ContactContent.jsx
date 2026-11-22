@@ -23,7 +23,7 @@ const ContactContent = () => {
     {
       title: 'LinkedIn',
       value: 'Quân M. Hoàng',
-      link: 'https://www.linkedin.com/in/qu%C3%A2n-m-ho%C3%A0ng-251160383/',
+      link: 'https://www.linkedin.com/in/quan-hoang-251160383/',
       icon: '\u2B1C'
     },
     {
