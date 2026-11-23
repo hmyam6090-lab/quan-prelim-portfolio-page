@@ -28,3 +28,6 @@ picoCAD_Mac/
 CLAUDE.md
 .claude/
 __pycache__/
+
+# picoCAD model generator scripts (local only; the generated public/models/*.json are committed)
+tools/
